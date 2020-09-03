@@ -1,5 +1,7 @@
 * 目录
-    * [week1. Introduction to Data visulization]()
+    * [week1. Introduction to Data visulization](#Week1-Introduction_to_data_visulization)
+    * [week2. Survey of visualization techniques](#Week2-Survey-of-visualization-techniques)
+
 
 
 
@@ -75,8 +77,122 @@ You are aware of just 0.7% of what you experience.
 <img src="./pic/1_4_1.png" style='float:left' width = "420" height = "240" alt="data_visualization" />
 <img src="./pic/1_4_2.png"  style="float:right;clear:left" width = "420" height = "240" alt="data_visualization" />
 
+&nbsp;
+&nbsp;
+&nbsp;
+
+# week2. Survey of visualization techniques
+
+&nbsp;
+&nbsp;
+
+### 2.1 Data
+
+<br>
+<br>
+
+### 2.2 Visualization Techniques
+
+<br>
+<br>
+
+### 2.3 Introduction to WEB technologies
+
+<img src="./pic/2_3_1.png" width = "420" height = "240" alt="data_visualization" />
+
+* asynchronous javascript & html (AJAX)
+
+    AJAX是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
+    通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
 
 
+* Web Languages
+    * 1. HTML (hypter-text markup language)
+            * defines the page semantics or meaning
+            * whitespace and line breaks disregarded
+            * HTML documnet as a tree of html <u>elements</u> (tag with attributes)
+            * two attibures (class & id) used to identify elements
+            * elements example : svg
+                <img src="./pic/2_3_2.png" width = "420" height = "240" alt="data_visualization" />
+    * 2. CSS (Cascading Style Sheets)
+            * used to define the appearance of HTML elements
+            * including in web pages
+                <img src="./pic/2_3_3.png" width = "300" height = "240" alt="data_visualization" />
+            * selectors
+                div.foo (div elements with <u>class</u> foo)
+                div #foo (elements with <u>id</u> foo inside a div) have space before # means inside
+                div,.foo (div elements <u>and</u> elements with class foo)
+                div p.foo (elemetns with class foo <u>in</u> a p in a div)
+    * 3. Javascript
+            * implemented in browsers and non-browser, e.g., node
+            * uses in browsers
+                user interaction
+                asynchronous communications
+                control the browser
+                alter the content
+            * including in web pages
+                <img src="./pic/2_3_4.png" width = "210" height = "140" alt="data_visualization" />
+            * main features
+                a. object-oriented language 面向对象
+                ```js
+                //denotes a comment
+                obj = {first: 'Joseph', last: 'Priestley'}; //object literal
+                obj.first  //'Joseph'
+                ```
+                b. everything is mutable可变的
+                ```js
+                obj = {first: 'Joseph', last: 'Priestley'};
+                obj.first = 'Joe'  //now first is 'Joe'
+                ```
+                c. dynamic typing
+                ```js
+                //primitive types
+                var foo = true;       //Boolean
+                var foo = null;       //Null
+                var foo = undefined;  //Undefined
+                var foo = 2.3;        //Number
+                var foo = 'bar'       //String
+                ```
+                d. function level scope
+                ```js
+                var b = 5;  //global scope, i.e., at the top of the script
+                function f(a) {
+                var b = 3;  //local scope, i.e., within the scope of the function
+                return a + b;
+                }
+                b;  //5
+                ```
+                e. first-calss functions
+                ```js
+                //functions treated similar to any other variable
+                var pi = function() { return Math.PI; }  //assign functions to a variable
 
+                function add(a, f) { return a + f(); }
+                add(1, pi);  //pass functions as argument
 
+                function addPi() {
+                return function(a) {  //return functions
+                    return a + Math.PI;
+                }
+                }
+                ```
+            * Hoisting
+                Hoisting refers to the moving of variable declarations at the top of their scope when the script is parsed
+                <img src="./pic/2_3_5.png" width = "490" height = "240" alt="data_visualization" />
+            * Closure
+                A closure is the combination of a function and the lexical environment within which that function was declared.
+                ```js
+                function exampleClosure(arg1, arg2) {  //closure example
+                    var localVar = 2;
+                    function exampleReturned(innerArg) {  //inner function (declaration)
+                        return ((arg1 + arg2) / (localVar + innerArg));
+                    }
+                    return exampleReturned;  //reference to inner function
+                }
 
+                var globalVar = exampleClosure(2, 4);
+
+                console.log(globalVar);  //[Function: exampleReturned]
+
+                globalVar(4);  //1 = ((2 + 4) / (2 + 4))
+                ```
