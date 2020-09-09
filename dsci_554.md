@@ -1,6 +1,8 @@
 * 目录
     * [week1. Introduction to Data visulization](#Week1-Introduction_to_data_visulization)
     * [week2. Survey of visualization techniques](#Week2-Survey-of-visualization-techniques)
+    * [week3. ]
+    (#Week3-)
 
 
 
@@ -69,25 +71,57 @@ You are aware of just 0.7% of what you experience.
 
 <img src="./pic/1_3_1.png" width = "420" height = "280" alt="data_visualization" />
 
-----
 &nbsp;
 
 ### 1.3 Tools and software
 
-<img src="./pic/1_4_1.png" style='float:left' width = "420" height = "240" alt="data_visualization" />
-<img src="./pic/1_4_2.png"  style="float:right;clear:left" width = "420" height = "240" alt="data_visualization" />
+<img src="./pic/1_4_1.png" width = "420" height = "240" alt="data_visualization" />
+
+<img src="./pic/1_4_2.png"  width = "420" height = "240" alt="data_visualization" />
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-# week2. Survey of visualization techniques
-
-&nbsp;
+# Week2. Survey of visualization techniques
 &nbsp;
 
 ### 2.1 Data
+Data is plural (from the latin 'what is given')
+Datum is a given piece of data
+<br>
 
+* Data types
+    * Categorical
+        * Nominal
+            no natural ordering
+            eg., gender, ethnicity, nationality
+        * Ordinal
+            logical ordering but difference not meaningful 差异没有意义
+            eg., levels of happiness, levels of difficulty
+    * ( Qualified categorical data 另一种分类方法
+        * Binomial      eg., right/left,true/false
+        * Dichotomous对立的 eg., hot/cold
+            * Vs. non-dichotomous   eg,. Likert Chart)
+    * Numerical
+        * Ratio
+            * ordered, differences & boubling meaningful, 0 fixed
+            eg., temperature in Kelvin (40=2×20), length, height
+        * Intervel
+            * ordered, differences meaningful, doubling not meaningful, 0 arbitrary
+            eg., temperature in Celsius (40≠2×20)/Fahrenheit, dates, locations
+
+* Data Models
+    * Conceptual
+        Semantic description of data entities and their relations
+    * Logical
+        Implementation independent data design representation
+        eg., entity-relationship diagram
+    * Physical
+        Implementation dependent details by which data is actually stored (with data types)
+
+* Visualization Reference Model
+    <img src="./pic/2_1_1.png" width = "580" height = "300" alt="data_visualization" />
 <br>
 <br>
 
@@ -196,3 +230,10 @@ You are aware of just 0.7% of what you experience.
 
                 globalVar(4);  //1 = ((2 + 4) / (2 + 4))
                 ```
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# week3. Survey of visualization techniques
