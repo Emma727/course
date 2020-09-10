@@ -126,6 +126,78 @@ Datum is a given piece of data
 <br>
 
 ### 2.2 Visualization Techniques
+1. **Charts**
+    * Dots
+        * <u>Scatterplot</u>散点图  (2+ variables in Cartesian coordinate)
+        * <u>Bubble chart</u>  点图 (3 continuous variables: bubble center (2) and radius (1))
+    * Bars
+        * <u>Bar chart</u>  (Bar length proportional to continuous variable)
+        * <u>Lollipop chart</u> 注重具体高度 (Line length proportional to continuous variable and data point)
+    * Bar layouts
+        * <u>Coxcomb chart</u>鸡冠花图  (Same angle, radius encodes value, colors different categories. Stacked bar chart with radial layout.)
+        * <u>Marimekko chart</u>  (Bar chart where the width encodes relative size. Also called Mekko chart.)
+        * <u>Waterfall chart</u>  (Cumulative effects of sequence of positive and negative variations)
+        <img src="./pic/2_2_1.png" width = "435" height = "320" alt="data_visualization" />
+    * Pies
+        * <u>Pie chart</u>  (Exploded pie chart. Pie charts, are a stacked bar charts in polar coordinates. Angle encodes proportion.)
+        * <u>Donut chart</u>  (Pie Chart with centre area cut out. Angle encodes proportion.)
+        <img src="./pic/2_2_2.png" width = "380" height = "160" alt="data_visualization" />
+    * Lines
+        * <u>line chart</u> (Trends on continuous variables, e.g., time-series)
+        * <u>Sparkline</u>心电图  (Trends on small window size [Tufte 2004])
+    * Line layouts
+        * <u>Slopegraph</u>  (Shows data values, trends [Tufte 1983])
+        * <u>Parallel coordinates</u>  (Multivariate data.)
+        * <u>Radar chart</u>  (Multivariate data. Also named web, spider, star, cobweb, polar, or Kiviat.)
+        <img src="./pic/2_2_3.png" width = "400" height = "320" alt="data_visualization" />
+    * Area
+        * <u>Area chart</u>  (Show cumulative or proportions and trends)
+        * <u>Steramgraph</u>  (Type of stacked area graph which is displaced around a central axis, resulting in a flowing, organic shape)
+        <img src="./pic/2_2_4.png" width = "440" height = "190" alt="data_visualization" />
+
+
+2. **Graphs and Trees**
+    * Hierarchies
+        * <u>Dendrogram</u>系统树图  (From Greek dendro tree and gramma drawing.)
+        * <u>Reingold-tilford tree</u>  (Hierarchical data as linked tree)
+        <img src="./pic/2_2_5.png" width = "440" height = "225" alt="data_visualization" />
+        * <u>treemap</u>  (Hierarchical data as nested rectangles. Area proportional to value.)
+        * <u>sunburst</u>和鸡冠图很像  (Hierarchical data as rings. Center is root node. Angles are equal or proportional to value.)
+    * Flowcharts
+        * <u>Alluvial diagram</u> (Shows relations between multivariate data. Named after alluvial fans formed by soil deposited by streaming water.)
+        * <u>Sankey Diagram</u>  (Magnitude of flow between nodes in a network)
+        <img src="./pic/2_3_6.png" width = "500" height = "225" alt="data_visualization" />
+    * <u>Networks network graph</u>  (Relationships (lines) between entities (nodes))
+    * Matrix
+        * <u>Heat map</u>  (Matrix values as colors)
+        * <u>Chord Diagram</u>弦图表  (Shows directed relationships among a group of entities in a matrix)
+        <img src="./pic/2_2_7.png" width = "350" height = "170" alt="data_visualization" />
+
+3. **Clouds**
+    * <u>Word Cloud</u>
+    * <u>Bubble cloud</u>
+    * <u>Circle packing</u>圆互相包含  (Bubble cloud technique with hierarchical information as enclosing circles)
+
+4. **Temporal**
+    * <u>Time series plot</u>  (Values ordered in time as a line chart)
+    * <u>Gantt chart</u>工作日程表  (Schedule with tasks layed out on time axis)
+    * <u>Timeline</u>  (Events layed out on time axis)
+    <img src="./pic/2_2_8.png" width = "450" height = "250" alt="data_visualization" />
+
+5. **Geospatial and Mapping**
+    * Thematic maps主题地图
+        * <u>Choropleth</u>等值线图  (Areas are shaded or patterned in proportion to variable)
+        * <u>Proportional symbol map</u>  (Scaled symbols show data for areas/locations. Also called Graduated Symbol Map.)
+        * <u>Dot map</u>  (Can be used to locate each occurrence of a phenomenon. One-to-one or one-to-many.)
+        <img src="./pic/2_2_9.png" width = "500" height = "300" alt="data_visualization" />
+        * <u>Cartogram</u>统计图  (Area used to display value. Distortion used to show continuous variables)
+        * <u>Isopleth</u>等值线  (Use contours等高线 to show continuous variables. Also called Isarithmic.)
+        <img src="./pic/2_2_10.png" width = "410" height = "210" alt="data_visualization" />
+    * Other named
+        * <u>Topographic</u>  (Detailed quantitative representation of land relief using contour lines)
+        * <u>Nautical</u>航海的  (Charts of maritime/coastal area)
+        * <u>Image based</u>  (Using satellite or aerial imagery)
+        <img src="./pic/2_2_11.png" width = "500" height = "300" alt="data_visualization" />
 
 <br>
 <br>
@@ -150,7 +222,7 @@ Datum is a given piece of data
                 <img src="./pic/2_3_2.png" width = "420" height = "240" alt="data_visualization" />
     * 2. CSS (Cascading Style Sheets)
             * used to define the appearance of HTML elements
-            * including in web pages
+            * including in web pages<br>
                 <img src="./pic/2_3_3.png" width = "300" height = "240" alt="data_visualization" />
             * selectors
                 div.foo (div elements with <u>class</u> foo)
@@ -164,7 +236,7 @@ Datum is a given piece of data
                 asynchronous communications
                 control the browser
                 alter the content
-            * including in web pages
+            * including in web pages<br>
                 <img src="./pic/2_3_4.png" width = "210" height = "140" alt="data_visualization" />
             * main features
                 a. object-oriented language 面向对象
@@ -236,4 +308,21 @@ Datum is a given piece of data
 &nbsp;
 &nbsp;
 
-# week3. Survey of visualization techniques
+# week3. Design space of visualizations, graphing in teh browser, introduction to D3 and Vega
+&nbsp;
+
+**Infographics** (a clipped compound of "information" and "graphics") are graphic visual representations of information, data or knowledge intended to present information quickly and clearly. They can improve cognition by utilizing graphics to enhance the human visual system's ability to see patterns and trends.
+
+A **dashboard** is a type of graphical user interface which often provides at-a-glance views of key performance indicators (KPIs) relevant to a particular objective or business process. In other usage, "dashboard" is another name for "progress report" or "report.".
+
+
+### 3.1 Design space and design trade-offs
+
+### 3.2 Graphing in the browser
+
+### 3.3 Introduction to D3
+
+### 3.4 Introduction to Vega and Vega-lite
+
+
+
