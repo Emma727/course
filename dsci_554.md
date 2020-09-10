@@ -93,32 +93,28 @@ Datum is a given piece of data
 
 * Data types
     * Categorical
-        * Nominal
-            no natural ordering
-            eg., gender, ethnicity, nationality
-        * Ordinal
-            logical ordering but difference not meaningful 差异没有意义
-            eg., levels of happiness, levels of difficulty
+        * Nominal:  no natural ordering<br>
+             eg., gender, ethnicity, nationality
+        * Ordinal:  logical ordering but difference not meaningful 差异没有意义<br>
+             eg., levels of happiness, levels of difficulty
     * ( Qualified categorical data 另一种分类方法
         * Binomial      eg., right/left,true/false
         * Dichotomous对立的 eg., hot/cold
             * Vs. non-dichotomous   eg,. Likert Chart)
     * Numerical
-        * Ratio
-            * ordered, differences & boubling meaningful, 0 fixed
-            eg., temperature in Kelvin (40=2×20), length, height
-        * Intervel
-            * ordered, differences meaningful, doubling not meaningful, 0 arbitrary
-            eg., temperature in Celsius (40≠2×20)/Fahrenheit, dates, locations
+        * Ratio:  ordered, differences & boubling meaningful, 0 fixed<br>
+             eg., temperature in Kelvin (40=2×20), length, height
+        * Intervel:  ordered, differences meaningful, doubling not meaningful, 0 arbitrary<br>
+             eg., temperature in Celsius (40≠2×20)/Fahrenheit, dates, locations
 
 * Data Models
-    * Conceptual
-        Semantic description of data entities and their relations
-    * Logical
-        Implementation independent data design representation
-        eg., entity-relationship diagram
-    * Physical
-        Implementation dependent details by which data is actually stored (with data types)
+    * Conceptual<br>
+         Semantic description of data entities and their relations
+    * Logical<br>
+         Implementation independent data design representation<br>
+         eg., entity-relationship diagram
+    * Physical<br>
+         Implementation dependent details by which data is actually stored (with data types)
 
 * Visualization Reference Model
     <img src="./pic/2_1_1.png" width = "580" height = "300" alt="data_visualization" />
@@ -224,18 +220,18 @@ Datum is a given piece of data
             * used to define the appearance of HTML elements
             * including in web pages<br>
                 <img src="./pic/2_3_3.png" width = "300" height = "240" alt="data_visualization" />
-            * selectors
-                div.foo (div elements with <u>class</u> foo)
-                div #foo (elements with <u>id</u> foo inside a div) have space before # means inside
-                div,.foo (div elements <u>and</u> elements with class foo)
-                div p.foo (elemetns with class foo <u>in</u> a p in a div)
+            * selectors <br>
+                div.foo (div elements with <u>class</u> foo)<br>
+                div #foo (elements with <u>id</u> foo inside a div) have space before # means inside <br>
+                div,.foo (div elements <u>and</u> elements with class foo)<br>
+                div p.foo (elemetns with class foo <u>in</u> a p in a div)<br>
     * 3. Javascript
             * implemented in browsers and non-browser, e.g., node
-            * uses in browsers
-                user interaction
-                asynchronous communications
-                control the browser
-                alter the content
+            * uses in browsers<br>
+                user interaction<br>
+                asynchronous communications<br>
+                control the browser<br>
+                alter the content<br>
             * including in web pages<br>
                 <img src="./pic/2_3_4.png" width = "210" height = "140" alt="data_visualization" />
             * main features
@@ -282,10 +278,10 @@ Datum is a given piece of data
                 }
                 }
                 ```
-            * Hoisting
+            * Hoisting<br>
                 Hoisting refers to the moving of variable declarations at the top of their scope when the script is parsed
                 <img src="./pic/2_3_5.png" width = "490" height = "240" alt="data_visualization" />
-            * Closure
+            * Closure<br>
                 A closure is the combination of a function and the lexical environment within which that function was declared.
                 ```js
                 function exampleClosure(arg1, arg2) {  //closure example
