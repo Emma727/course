@@ -187,7 +187,7 @@ Datum is a given piece of data
         * <u>Proportional symbol map</u>  (Scaled symbols show data for areas/locations. Also called Graduated Symbol Map.)
         * <u>Dot map</u>  (Can be used to locate each occurrence of a phenomenon. One-to-one or one-to-many.)
         <img src="./pic/2_2_9.png" width = "500" height = "300" alt="data_visualization" />
-        
+
         * <u>Cartogram</u>统计图  (Area used to display value. Distortion used to show continuous variables)
         * <u>Isopleth</u>等值线  (Use contours等高线 to show continuous variables. Also called Isarithmic.)
         <img src="./pic/2_2_10.png" width = "410" height = "210" alt="data_visualization" />
@@ -236,7 +236,7 @@ Datum is a given piece of data
                 alter the content<br>
             * including in web pages<br>
                 <img src="./pic/2_3_4.png" width = "210" height = "140" alt="data_visualization" />
-            * main features
+            * main features<br>
                 a. object-oriented language 面向对象
                 ```js
                 //denotes a comment
