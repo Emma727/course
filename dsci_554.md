@@ -313,10 +313,66 @@ Datum is a given piece of data
 
 A **dashboard** is a type of graphical user interface which often provides at-a-glance views of key performance indicators (KPIs) relevant to a particular objective or business process. In other usage, "dashboard" is another name for "progress report" or "report.".
 
+<br>
 
 ### 3.1 Design space and design trade-offs
+|less complex|more complex|explain|example|
+|-|-|-|-|
+|decoration|abstraction|measures the distance from referent to the representation|纸币图片 vs. 钱币符号|
+|decoration|functionality|measures the amount of informative content|有装饰的图表 vs. 直白的图表|
+|lightness|density|measures the amount of content displayed in relation to space|一张图  vs.多个图平铺展示|
+|undimensionality|multidimensionality|measures the number of layers and forms used to encode the data|一张图 vs.多张图叠放展示|
+|familiarity|originality|measures how challenging the forms are for the user to understand|好懂的图 vs. 难懂的图|
+|redundancy|novelty|measures the number of times things are explained|解释很多次的  vs. 只出现一次的|
+
+&nbsp;
+&nbsp;
 
 ### 3.2 Graphing in the browser
+
+* Document Object Model 
+    * 把HTML解析成为树状的结构，并通过改变内容实现交互
+    <img src="./pic/3_2_1.png" width = "600" height = "210" alt="data_visualization" />
+
+<br>
+
+* CSS Box Model 
+    * two types: <br>
+        * inline: occupy the space bounded by the tag<br>
+            ```<span>会显示在同一行 </span>```
+        * block: start on a new line and take up the full width<br>
+            ```<div>换行显示</div>```   
+
+* global vs. element spacific attributes
+    * global:<Br>
+        ```css
+        <!-- Use id to reference containers for dynamic charts -->
+        <div id="chart1"></div>  
+        <svg id="chart2"></svg>
+
+        <style>
+        div.bar { background-color: red; }
+        circle.dot { fill: red; }
+        </style>
+
+        <!-- Use class to apply common styles -->
+        <div class="bar" style="width: 600px">bar 1</div>
+
+        <svg style="background-color: lightpink">
+        <circle class="dot" cx="5" cy="5" r="2"/>
+        </svg>
+        ```
+    * element spacific attributes:<br>
+        ```css
+        <!-- Use element specific attributes to place and size -->
+        <img src="pict.png" width="20px"\>
+
+        <svg style="background-color: lightpink">
+        <circle cx="5" cy="5" r="2"/>
+        </svg>
+        ```
+                
+
 
 ### 3.3 Introduction to D3
 
