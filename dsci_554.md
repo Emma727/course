@@ -1,8 +1,7 @@
 * 目录
     * [week1. Introduction to Data visulization](#Week1-Introduction_to_data_visulization)
     * [week2. Survey of visualization techniques](#Week2-Survey-of-visualization-techniques)
-    * [week3. ]
-    (#Week3-)
+    * [week3. Design space of visualizations, graphing in teh browser, introduction to D3 and Vega](#week3-Design-space-of-visualizations-graphing-in-the-browser-introduction-to-D3-and-Vega)
 
 
 
@@ -306,7 +305,7 @@ Datum is a given piece of data
 &nbsp;
 &nbsp;
 
-# week3. Design space of visualizations, graphing in teh browser, introduction to D3 and Vega
+# week3. Design space of visualizations, graphing in the browser, introduction to D3 and Vega
 &nbsp;
 
 **Infographics** (a clipped compound of "information" and "graphics") are graphic visual representations of information, data or knowledge intended to present information quickly and clearly. They can improve cognition by utilizing graphics to enhance the human visual system's ability to see patterns and trends.
@@ -337,14 +336,14 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
 <br>
 
 * CSS Box Model 
-    * two types: <br>
+    * two types: 
         * inline: occupy the space bounded by the tag<br>
             ```<span>会显示在同一行 </span>```
         * block: start on a new line and take up the full width<br>
             ```<div>换行显示</div>```   
 
 * global vs. element spacific attributes
-    * global:<Br>
+    * global:
         ```css
         <!-- Use id to reference containers for dynamic charts -->
         <div id="chart1"></div>  
@@ -362,7 +361,7 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
         <circle class="dot" cx="5" cy="5" r="2"/>
         </svg>
         ```
-    * element spacific attributes:<br>
+    * element spacific attributes:
         ```css
         <!-- Use element specific attributes to place and size -->
         <img src="pict.png" width="20px"\>
