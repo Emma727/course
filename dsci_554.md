@@ -1,8 +1,10 @@
 * 目录
-    * [week1. Introduction to Data visulization](#Week1-Introduction_to_data_visulization)
-    * [week2. Survey of visualization techniques](#Week2-Survey-of-visualization-techniques)
-    * [week3. Design space of visualizations, graphing in teh browser, introduction to D3 and Vega](#week3-Design-space-of-visualizations-graphing-in-the-browser-introduction-to-D3-and-Vega)
-
+    * [Week1. Introduction to Data visulization](#Week1-Introduction_to_data_visulization)
+    * [Week2. Survey of visualization techniques](#Week2-Survey-of-visualization-techniques)
+    * [Week3. Design space of visualizations, graphing in teh browser, introduction to D3 and Vega](#week3-Design-space-of-visualizations-graphing-in-the-browser-introduction-to-D3-and-Vega)
+    * [Week5. The eye and the visual brain, D3 scales and exes](#Week4-The-eye-and-the-visual-brain-D3-scales-and-exes)
+* [quiz](#quiz)
+    * [quiz4](#quiz4)
 
 
 
@@ -370,12 +372,319 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
         <circle cx="5" cy="5" r="2"/>
         </svg>
         ```
-                
+        
 
 
 ### 3.3 Introduction to D3
 
 ### 3.4 Introduction to Vega and Vega-lite
+
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Week4. Designing infographics and dashboards, D3 data join basics and loading data
+[quiz](#quiz4)
+
+&nbsp;
+&nbsp;
+
+### 4.1 Designing infographics and dashboards
+
+##### infographics:
+1. Understand
+    * Information to communicate
+    * User capabilities, knowledge of topic, context and display size
+2. Method
+    * a. Seek depth:
+    * b. Clarify
+    * c. Add Boom effect
+
+##### Dashboards
+1. Understand
+    * Information to communicate
+    * User capabilities, knowledge of topic, context and display size
+2. Do
+    * Use a grid layout
+    * Most important at the top
+    * Use annotated & labeled big numbers
+    * Simplify
+    * Optimize visual queries
+    * Use safe fonts, colors consistently
+    * 5-second rule: topic, key trends, how to explore (monitoring applications!)
+
+
+<table style = 'font-size:90%'>
+    <tr>
+        <td rowspan="4">1. seek depth</td>
+        <td>Wheels</td>
+        <td>Density-Lightness<br>Multidimen-Uni</td>
+    </tr>
+    <tr>
+        <td>Cairo's recommendations</td>
+        <td>1. Move position of graphic at least 10% towards density and multidimensionality<br>2. Include inner layers as necessary based on story and focus</td>
+    </tr>
+    <tr>
+        <td>Both</td>
+        <td>1. Define where your graphic stands in terms of density and dimensionality<br>2. Organize in layers, starting with a summary<br>3. Structure the layers in logical order<br>4. Most important at the top</td>
+    </tr>
+    <tr>
+        <td>Dashboard recommendations</td>
+        <td>1. Use a grid layout<br>2. Use annotated & labeled big numbers<br>3. 5-second rule: topic, key trends, how to explore (monitoring applications!)</td>
+    </tr>
+    <tr>
+        <td rowspan="4">2. Clarify</td>
+        <td>Wheels</td>
+        <td>Abstraction-Figuration<br>Functionality-Decoration</td>
+    </tr>
+        <tr>
+        <td>Cairo's recommendations</td>
+        <td>1. Do not simplify but clarify<br>2. Use space first to explain and develop the story<br>3. Never dumb down your data</td>
+    </tr>
+    <tr>
+        <td>Both</td>
+        <td>1. Think about structure first then eye-candy<br>2. Think about how data should be organized before thinking about style<br>3. Optimize visual queries</td>
+    </tr>
+    <tr>
+        <td>Dashboard recommendations</td>
+        <td>1. Simplify<br>2. 5-second rule: topic, key trends, how to explore (monitoring applications!)</td>
+    </tr>
+    <tr>
+        <td rowspan="4">3. Boom Effect</td>
+        <td>Wheels</td>
+        <td>Originality-Familarity<br>Novelty-Redundancy</td>
+    </tr>
+        <tr>
+        <td>Cairo's recommendations</td>
+        <td>1. Experiment (carefully) with novel (original) forms</td>
+    </tr>
+    <tr>
+        <td>Both</td>
+        <td>1. The more original the form the more redundancy<br>2. Explain novel forms with text and other graphics<br>3. Use safe fonts and colors consistently</td>
+    </tr>
+    <tr>
+        <td>Dashboard recommendations</td>
+        <td>1. 5-second rule: topic, key trends, how to explore (monitoring applications!)</td>
+    </tr>
+</table>
+
+
+&nbsp;
+&nbsp;
+### 4.2 Function and esthetics, minimalistic visualizations
+##### 1. Tufte's design principle
+Elegance in visuals is attained when the complexity of the data matches the simplicity of the design<br>
+(当数据的复杂性与设计的简洁性相匹配时，就可以获得视觉上的优雅)
+
+* Data-ink Ratio
+数据墨水是图形上的不可擦除的核心内容<br>
+Data-ink ratio = Data / Total ink used to print to graphic<br>
+               = Proportion of a graphic’s ink devoted to the **non-redundant** display of data-information<br>
+               = 1.0−Proportion of a graphic that can be erased without loss of data-information<br>
+
+* Tufte's design principle expressed with teh data-ink ratio
+Above all else show data<br>
+Maximize the data-ink ratio<br>
+Erase non-data-ink<br>
+Erase redundant data-ink<br>
+Revise and edit<br>
+
+* Chartjunk
+The interior decoration of graphics generates a lot of ink that does not tell the viewer anything new.<br>
+The purpose of decoration varies — to make the graphic appear more scientific and precise, to enliven the display, to give the designer an opportunity to exercise artistic skills.<br>
+Regardless of its cause, it is all non-data-ink or redundant data-ink, and it is often chartjunk.<Br>
+
+##### 2. Night Holmes' design principle
+Use humor to instill affection in readers for numbers and charts
+(用幽默向读者灌输对数字和图表的喜爱)
+* Screen Time spent looking at different chart elements
+    <img src="./pic/4_2_1.png" width = "360" height = "190" alt="data_visualization" />
+* Comprehension and Memorability
+    <img src="./pic/4_2_2.png" width = "600" height = "370" alt="data_visualization" />
+
+&nbsp;
+&nbsp;
+### 4.3 D3 data join basics
+```html
+d3.select(A)
+  .selectAll(B)
+  .data(dataset)
+  .enter()
+  .append(C)
+  .text(function(d){return d;});
+```
+1. dataset 一定要是个array
+2. selectAll() 是count功能
+    * 在enter()后，如果B和C相等，在A中已经有n个C，则从第n个数开始modify原数据，前n个值保持不变
+    * 在enter()后，如果B和C不相等，则直接append，和count没有关系
+3. 每个enter()只会加入或修改和dataset数量一样的值。
+
+
+##### 1. Stress test
+
+##### 2. Customize the selection
+
+##### 2. Multiple elements per data point
+
+&nbsp;
+&nbsp;
+### 4.4 Loading data in D3
+
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Week5. The eye and the visual brain, D3 scales and exes
+
+&nbsp;
+&nbsp;
+
+### 5.1 The eye and the visual brain
+
+
+&nbsp;
+&nbsp;
+
+### 5.2 D3 scales and axes
+
+
+
+
+
+
+
+
+
+
+
+
+
+# quiz
+
+## quiz4
+
+#### 代码题： What will appear on the page?
+1. ```html
+    <script>
+        var dataset = [40, 80, 120, 160];
+        var svg = d3.select('body')
+        .append('svg')
+        .attr('width',200)
+        .attr('height',200);
+
+        svg.selectAll('circle')
+        .data(dataset)
+        .enter()
+        .append('circle')
+        .attr('cy',function(d){return d;})
+        .attr('r',5)
+    </script>
+    ```
+
+    * Answer :<br>
+        <img src="./pic/quiz4_1.png" width = "100" height = "100" alt="data_visualization" />
+&nbsp;
+&nbsp;
+
+2.  ```html
+    <svg id='chart00'></svg>
+    <script>
+        var dataset = [40, 80, 120, 160];
+        var svg = d3.select('#chart00')
+            .attr('width', 200)
+            .attr('height', 100);
+
+        svg.selectAll('rect')
+            .data(dataset)
+            .enter()
+            .append('rect')
+            .attr('x', 0)
+            .attr('y', function (d, i) { return i * 25; })
+            .attr('width', function (d) { return d; })
+            .attr('height', 20);
+    </script>
+    ```
+    * Answer：<br>
+        <img src="./pic/quiz4_4.png" width = "100" height = "100" alt="data_visualization" />
+
+&nbsp;
+&nbsp;
+
+3. 给一个文件data.csv读取，并修改<br>
+    ```csv
+    Food
+    Apples
+    Beans
+    Cookies
+    ```
+
+    ```html
+    <p>Tomato</p>
+
+    <script>
+        d3.csv('data.csv').then(function (data)){
+            d3.select('body')
+              .selectAll('p')
+              .data(data)
+              .enter()
+              .append('p')
+              .text(function (d){return d.Food;});
+        };
+    </script>
+    ```
+    * Answer:<br>
+        Tomato<br>
+        Beans<br>
+        Cookies<br>
+
+&nbsp;
+&nbsp;
+
+4. ```html
+    <svg id='chart1' width='500' height='100'></svg>
+    <script>
+        var dataset = [{ x: 100, y: 50, color: 'red' },
+                        { x: 200, y: 50, color: 'green' },
+                        { x: 300, y: 50, color: 'blue' }];
+
+        var svg = d3.select('#chart1')
+            .selectAll('rect')
+            .data(dataset)
+            .enter()
+            .append('circle')
+            .attr('cx', function (d) { return d.x; })
+            .attr('cy', function (d) { return d.y; })
+            .attr('r', 20)
+            .attr('fill', function (d) { return d.color; });
+
+        d3.select('body')
+            .selectAll('circle')
+            .attr('fill', 'green');
+
+        d3.select('body')
+            .selectAll('circle')
+            .attr('fill', 'blue');
+
+        d3.select('body')
+            .selectAll('circle')
+            .attr('fill', 'red');
+    </script>
+    ```
+    * Answer :<br>
+        <img src="./pic/quiz4_5.png" width = "340" height = "80" alt="data_visualization" />
+
+
+
+&nbsp;
+#### 问答题：
+<img src="./pic/quiz4_2.png" width = "400" height = "200" align = 'left' />
+<img src="./pic/quiz4_3.png" width = "500" height = "200" align = 'left' />
 
 
 
