@@ -671,7 +671,7 @@ d3.select(A)
             .selectAll('circle')
             .attr('fill', 'blue');
 
-        d3.select('body')
+        svg.select('body')
             .selectAll('circle')
             .attr('fill', 'red');
     </script>
