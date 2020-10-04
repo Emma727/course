@@ -2,7 +2,8 @@
     * [Week1. Introduction to Data visulization](#Week1-Introduction_to_data_visulization)
     * [Week2. Survey of visualization techniques](#Week2-Survey-of-visualization-techniques)
     * [Week3. Design space of visualizations, graphing in teh browser, introduction to D3 and Vega](#week3-Design-space-of-visualizations-graphing-in-the-browser-introduction-to-D3-and-Vega)
-    * [Week5. The eye and the visual brain, D3 scales and exes](#Week4-The-eye-and-the-visual-brain-D3-scales-and-exes)
+    * [Week4. Designing infographics and dashboards, D3 data join basics and loading data](#Week4-Designing-infographics-and-dashboards-D3-data-join-basics-and-loading-data)
+    * [Week5. The eye and the visual brain, D3 scales and exes](#Week5-The-eye-and-the-visual-brain-D3-scales-and-exes)
 * [quiz](#quiz)
     * [quiz4](#quiz4)
 
@@ -547,6 +548,70 @@ d3.select(A)
 
 ### 5.1 The eye and the visual brain
 
+1. Visible spectrum wavelengths from **400-700nm** (in nanometers)
+    <img src="./pic/5_1_1.png" width = "540" height = "290" alt="data_visualization" />
+
+2. High-resolution (高分辨率) vision in central 1-2° of field of view
+    <img src="./pic/5_1_2.png" width = "300" height = "300" alt="data_visualization" />
+
+3. Retina photoreceptors: Cones and Rods
+    * Retina: layer containing cells sensitive to light
+    * Cones: 感光，分辨颜色
+    * Rods: 只能感觉到黑和白 
+    <img src="./pic/5_1_3.png" width = "600" height = "380" alt="data_visualization" />
+
+4. Two vision based on looking way
+    * SACCADES (飞快扫视)
+        Eye movements (about 3 each second)<br>
+        Accompanied by periods of blindness<br>
+        more than 200ms to initiate<br>
+        Fastest movements in body (up to 900os−1)<br>
+
+    * FIXATIONS (固定)
+        A glimpse<br>
+        When visual information is acquired<br>
+        Task dependent<br>
+
+5. The visual system
+    * Eyes, nerves (optic nerve from eyes to brain) and visual cortex (areas V1-5)
+        * 眼睛、神经(眼睛到大脑的视神经)和视觉皮层(V1-5区)
+        * blind spot 是因为有一块sptic nerve，导致那一块无法感知。
+    * information processing in the visual system
+        <table style = 'font-size:90%'>
+        <tr>
+        <td>Bottom-up or data-driven</td>
+        <td>Top-down or schema-driven</td>
+        </tr>
+        <tr>
+        <td>Perception results from transforming sensory input into higher level information</td>
+        <td>Signals from the eye are integrated and compared to examples in memory</td>
+        </tr>
+        <tr>
+        <td>Knowledge and attention influence perception(认知)</td>
+        <td>Object knowledge directs the eyes and the feature extraction processing</td>
+        </tr>
+        </table>
+        <img src="./pic/5_1_4.png" width = "600" height = "380" alt="data_visualization" />
+
+
+6. Visual Queries
+    用bottom-up和top-down两种方法找到问题的答案，比如在chart中找到信息
+    * Visual queries and design considerations (said by C.Ware)
+        * **Visual query**: a pattern cognitively specified, that if found in the display will contribute to the solution of a problem
+        * **Visual thinking** consists of a series of acts of attention, driving eye movements and tuning our pattern-finding circuits
+        * Carefully craft visualizations to optimize visual queries
+
+7. Inattentional Blindness (不注意的丢失了信息)
+    * Reasons:
+        1. Failure to detect an unexpected stimulus that is fully visible
+        2. Limited attention allows to focus on one thing at the time
+        3. The brain prioritizes what to focus on
+
+8. Related Implications for Design
+    * For **designers** ... it is important to know what kinds of visual information the brain can process efficiently [Ware].
+    * **Be aware of inattentional blindness**. Never show simultaneous animations on different parts of the screen [Cairo].
+    * **Do not use too many competing stimuli**. Filling graphic with objects colored in pure accent tones disorients users [Cairo].
+    
 
 &nbsp;
 &nbsp;
