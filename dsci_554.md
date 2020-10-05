@@ -4,6 +4,8 @@
     * [Week3. Design space of visualizations, graphing in teh browser, introduction to D3 and Vega](#week3-Design-space-of-visualizations-graphing-in-the-browser-introduction-to-D3-and-Vega)
     * [Week4. Designing infographics and dashboards, D3 data join basics and loading data](#Week4-Designing-infographics-and-dashboards-D3-data-join-basics-and-loading-data)
     * [Week5. The eye and the visual brain, D3 scales and exes](#Week5-The-eye-and-the-visual-brain-D3-scales-and-exes)
+    * Week6. Project proposal presentation
+    * [Week7. pre-attentive features, interactive visualizations with d3](#Week7-pre-attentive-features-interactive-visualizations-with-d3)
 * [quiz](#quiz)
     * [quiz4](#quiz4)
 
@@ -628,6 +630,27 @@ d3.select(A)
 
 
 
+
+
+
+# Week7. pre-attentive features, interactive visualizations with d3
+
+&nbsp;
+&nbsp;
+
+### 6.1 Pre-attentive features
+
+
+&nbsp;
+&nbsp;
+
+### 6.2 Continuity of visual queries
+
+
+&nbsp;
+&nbsp;
+
+### 6.3 Interactive visualizations with D3
 
 
 # quiz
