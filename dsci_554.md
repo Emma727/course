@@ -106,7 +106,7 @@ Datum is a given piece of data
         * Dichotomous对立的 eg., hot/cold
             * Vs. non-dichotomous   eg,. Likert Chart)
     * Numerical
-        * Ratio:  ordered, differences & boubling meaningful, 0 fixed<br>
+        * Ratio:  ordered, differences & doubling meaningful, 0 fixed<br>
              eg., temperature in Kelvin (40=2×20), length, height
         * Intervel:  ordered, differences meaningful, doubling not meaningful, 0 arbitrary<br>
              eg., temperature in Celsius (40≠2×20)/Fahrenheit, dates, locations
@@ -550,10 +550,10 @@ d3.select(A)
 
 ### 5.1 The eye and the visual brain
 
-1. Visible spectrum wavelengths from **400-700nm** (in nanometers)
+1. Visible spectrum wavelengths from **400-700nm** (in nanometers)<br>
     <img src="./pic/5_1_1.png" width = "540" height = "290" alt="data_visualization" />
 
-2. High-resolution (高分辨率) vision in central 1-2° of field of view
+2. High-resolution (高分辨率) vision in central 1-2° of field of view<br>
     <img src="./pic/5_1_2.png" width = "300" height = "300" alt="data_visualization" />
 
 3. Retina photoreceptors: Cones and Rods
@@ -563,13 +563,13 @@ d3.select(A)
     <img src="./pic/5_1_3.png" width = "600" height = "380" alt="data_visualization" />
 
 4. Two vision based on looking way
-    * SACCADES (飞快扫视)
+    * SACCADES (飞快扫视)<br>
         Eye movements (about 3 each second)<br>
         Accompanied by periods of blindness<br>
         more than 200ms to initiate<br>
         Fastest movements in body (up to 900os−1)<br>
 
-    * FIXATIONS (固定)
+    * FIXATIONS (固定)<br>
         A glimpse<br>
         When visual information is acquired<br>
         Task dependent<br>
@@ -620,8 +620,290 @@ d3.select(A)
 
 ### 5.2 D3 scales and axes
 
+**Scales**: Encodings used to map data to visual representations
+**Axes**: Visual representations of the scale that let us read data values
 
+1. Annotations:
+    * Axes<br>
+        * axis
+        * axis labels
+        * axis values
+        * tick marks
+        * tick mark labels
+        * grid lines
+    * Legend 图例<br>
+        * title
+        * keys
+        * key labels
 
+2. Types of scales:<br>
+<img src="./pic/5_2_1.png" width = "460" height = "370" alt="data_visualization" />
+
+3. D3 scales and axes
+* d3 / d3-scale
+    * Simplify mapping data to representation
+    * Facilitates complex data transformations
+|Continuous|Ordinal|
+|-|-|
+|Quantitative data<br>Continuous domain and range|Qualitative data<br>Discrete domain|
+|Linear<br>Time<br>Power<br>Log<br>Quantize (rounds continuous data to set of discrete values)<br>Quantile (computes quantiles from a sample population)<br>Sequential<br>Threshold (allows to specify arbitrary breaks)|Ordinal<br>Band<br>Point|
+
+* D3.SCALELINEAR() 
+    y = ax + b
+```js
+dataset = [100, 120, 150];
+
+var x = d3.scaleLinear()  //function are objects in js
+  .domain([d3.min(dataset), d3.max(dataset)])  //extent of the data
+  .range([0, 100]);  //range is the extent of the svg in pixels
+
+x(125);  //50
+```
+
+* D3.SCALETIME()
+    y = at + b
+```js
+//use Date() to specify time in milliseconds
+var x = d3.scaleTime()
+  .domain([new Date(2018, 8, 20), new Date(2018, 12, 12)])
+  .range([0, 960]);
+
+x(new Date(2018, 11, 30));  //evaluate for date
+x(Date.now());  //evaluates scale for today's date
+
+```
+* D3.SCALELOG()
+    y = alog(x) + b
+```js
+var x = d3.scaleLog()
+  .domain([1, 10000])
+  .range([0, 1000])
+  .base(10);
+
+x(10);  //250
+x(10000);  //1000
+```
+
+* D3.SCALEORDINAL()
+适用于离散的domain
+```js
+var x = d3.scaleOrdinal()
+  .domain(['0', '1', '2'])  //discrete domain
+  .range([0, 1, 2]);
+
+x('0');  //0
+x('1');  //1
+```
+
+* D3.SCALEBAND()
+柱状图
+```js
+var x = d3.scaleBand()
+  .domain(['0', '1', '2'])  //discrete domain
+  .range([0, 600])
+  .paddingInner(0.05);  //set inner padding in [0, 1], dafaults to 0.
+
+x('0');  //0
+x('1');  //303.4
+x.bandwidth();  //193.2
+```
+
+* D3.SCALEPOINT()
+same as scaleBand() with bandwidth = 0
+```js
+var x = d3.scalePoint()
+  .domain(['0', '1', '2'])  //discrete domain
+  .range([0, 600]);
+
+x('0');  //0
+x('1');  //300
+```
+
+<br>
+### d3 / d3-axis
+Simplify drawing of axes
+
+* Drawing D3 axes
+```js
+var svg = d3.select('#svg02')
+  .attr("width", 400)
+  .attr("height", 400);
+
+// 1. CREATE SCALE FOR AXIS
+var scale = d3.scaleLinear()
+  .domain([0, 10])
+  .range([0, 300]);
+
+// 2. CREATE AXIS AND SET THE SCALE
+var axis = d3.axisLeft(scale);
+
+// 3. ADD AXIS IN A GROUP AND PLACE
+svg.append("g")
+  .attr("transform", "translate(50,50)")
+  .call(axis);  //call axis to draw
+```
+
+* 4 types of D3 axes
+<img src="./pic/5_2_2.png" width = "180" height = "180" alt="data_visualization" />
+
+```js
+var svg = d3.select('#svg03')
+  .attr("width", 400)
+  .attr("height", 400);
+
+var scale = d3.scaleLinear()
+  .domain([0, 10])
+  .range([0, 300]);
+
+//vertical axis with ticks on the left
+var axis_l = d3.axisLeft(scale);
+
+//vertical axis with ticks on the right
+var axis_r = d3.axisRight(scale);
+
+//horizonal axis with ticks on the top
+var axis_t = d3.axisTop(scale);
+
+//vertical axis with ticks on the bottom
+var axis_b = d3.axisBottom(scale);
+
+svg.append("g")
+  .attr("transform", "translate(50,50)")
+  .call(axis_l);
+
+svg.append("g")
+  .attr("transform", "translate(350,50)")
+  .call(axis_r);
+
+svg.append("g")
+  .attr("transform", "translate(50,50)")
+  .call(axis_t);
+
+svg.append("g")
+  .attr("transform", "translate(50,350)")
+  .call(axis_b);
+```
+
+* 4 types of D3 axes
+<img src="./pic/5_2_3.png" width = "180" height = "180" alt="data_visualization" />
+
+```js
+<style type="text/css">
+  #svg04 path {
+    stroke: blue;
+  }
+  #svg04 .dashed-axis path {  //axis is <path>
+    stroke: orange;
+    stroke-dasharray: 5,5;
+  }
+  #svg04 .tick line {  //ticks are <line>
+    stroke: green;
+    stroke-width: 5px;
+    shape-rendering: crispEdges;
+  }
+  #svg04 .tick text {
+    stroke: red;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+</style>
+
+<script>
+  var svg = d3.select('#svg04')
+	.attr("width", 400)
+	.attr("height", 400);
+  var y = d3.scaleLinear().domain([0, 10]).range([300, 0]);
+  var x = d3.scaleLinear().domain([0, 10]).range([0, 300]);
+  var axis_l = d3.axisLeft(y).ticks(3);
+  var axis_b = d3.axisBottom(x).ticks(3);
+  svg.append("g")
+    .attr("transform", "translate(50,50)")
+    .attr('class', 'dashed-axis')
+    .call(axis_l);
+  svg.append("g")
+    .attr("transform", "translate(50,350)")
+    .call(axis_b);
+</script>
+```
+
+* AXES LABELS AND GRID LINES
+<img src="./pic/5_2_4.png" width = "180" height = "180" alt="data_visualization" />
+
+```js
+<style>
+  .label {
+    font-size: 18px;
+    text-anchor: middle;
+	alignment-baseline: middle;
+  }
+
+  .dashed-axis path {
+	stroke-dasharray: 3, 3;
+  }
+</style>
+<script>
+  var svg = d3.select('#svg05').attr("width", 400).attr("height", 400);
+
+  var y = d3.scaleLinear().domain([0, 10]).range([300, 0]);
+  var x = d3.scaleLinear().domain([0, 10]).range([0, 300]);
+  var axis_l = d3.axisLeft(y)
+  var axis_b = d3.axisBottom(x)
+
+  svg.append("g")
+    .attr("transform", "translate(50,50)")
+    .call(axis_l);
+
+  svg.append("g")
+    .attr("transform", "translate(50,350)")
+    .call(axis_b);
+
+  var axis_hg = d3.axisBottom(x)  //create and place grid lines
+    .tickSize(0)
+    .ticks(0);
+
+  var axis_vg = d3.axisLeft(x)
+    .tickSize(0)
+    .ticks(0);
+
+  svg.append("g")
+    .attr("transform", "translate(50,200)")
+    .attr('class', 'dashed-axis')
+    .call(axis_hg);
+
+  svg.append("g")
+    .attr("transform", "translate(200,50)")
+    .classed('dashed-axis', true)
+    .call(axis_vg);
+
+  svg.append("text")  //create and place labels
+    .attr("x", 200)
+    .attr("y", 385)
+    .classed('label', true)
+    .text("axisBottom");
+
+  svg.append("text")
+    .attr("x", -200)
+    .attr("y", 15)
+    .classed('label', true)
+    .attr("transform", "rotate(-90)")
+    .text("axisLeft");
+</script>
+```
+
+* MARGIN CONVENTION TO PLACE THE CHART
+<img src="./pic/5_2_5.png" width = "300" height = "230" alt="data_visualization" />
+
+```js
+var margin = {top: 20, right: 20, bottom: 20, left: 20};  //step1: set margin
+var width = 600 - margin.left - margin.right,  //step2: set width and height
+    height = 300 - margin.top - margin.bottom;
+
+var svg = d3.select("body").append("svg")  //step3: set-up svg
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+```
 
 
 
