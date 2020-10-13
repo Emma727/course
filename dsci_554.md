@@ -920,20 +920,139 @@ var svg = d3.select("body").append("svg")  //step3: set-up svg
 &nbsp;
 &nbsp;
 
-### 6.1 Pre-attentive features
+### 7.1 Pre-attentive features
+##### 1.  preattentive processing (前注意处理)
+    前注意处理是来自环境的信息的潜意识积累。所有可用信息都经过前注意处理。然后，大脑过滤并处理重要的事情。通过有意识的处理，选择与人所想的具有最高显着性或相关性的信息，以进行进一步和更完整的分析。
+* features:
+    * Universal property
+    * Uses information from a single glimpse
+    * <200ms on large multi-element displays
+    * Does not involve attention
+    * Independent of:
+        * Practice
+        * Familiarity with the features
+        * Number of distractors
+    * Can help present information at a glance
+<br>
 
+##### 2.  Targets, distractors & visual features
+* **Feature interference** occurs when a visual feature (shape & color) that is shared between the target and distractors interferes with the preattentive process(一眼看不到target的情况)
+* **Feature hierarchy** :Some visual features interfere more than others.
+    * e.g., 'color' is easier to detect than 'shape'
+* A **conjunction search** is a visual search involving a combination of non-unique features. In general a conjunction search cannot be done preattentively.
+<br>
+
+##### 3.  Preattentive tasks
+<table>
+<tr>
+<td>Target detection</td>
+<td>Detect the presence or absence of a target element with a unique visual feature within a field of distractor elements</td>
+</tr>
+<tr>
+<td>Boundary detection</td>
+<td>Detect a texture boundary between two groups of elements, where all of the elements in each group have a common visual property</td>
+</tr>
+<tr>
+<td>Region tracking	</td>
+<td>Track one or more elements with a unique visual feature as they move in time and space</td>
+</tr>
+<tr>
+<td>Counting & estimation</td>
+<td>Count or estimate the number of elements with a unique visual feature</td>
+</tr>
+</table>
+<br>
+
+##### 4.  Preattentive features
+* Visual features supporting preattentive processing: 
+    * Color
+    * Orientation
+    * Size
+    * Motion
+    * Stereoscopic depth 立体景深
+<br>
+
+##### 5.  POP-OUT EFFECT (突出效应)
+有些target很好找，有些很不好找。
+Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查询
+* maximizing the pop-out effect
+    * In feature space, the greater the distance between target and distractors the greater the pop-out effect
 
 &nbsp;
 &nbsp;
 
 ### 6.2 Continuity of visual queries
+* Inattentional blindness (不注意的)
+    * Failure to detect an unexpected stimulus that is fully visible
+    * Can usually only focus on one thing at the time
+    * The brain has to prioritize what to focus on
+* Change blindness (看变化的事物)
+    * Not detecting a brief transitory event occurring in the visual field
+    * Happens when we blink or move our eyes quickly
+    * Involves very short term (iconic) memory
+<br>
 
-
+* **Animated transitions**: 
+    * definition: Animations between an initial and a final state
+    * Ensures object constancy (let's us track objects) during:
+        * Filtering data
+        * Reordering data
+        * Resizing operations
+        * Changing forms...
 &nbsp;
 &nbsp;
 
 ### 6.3 Interactive visualizations with D3
+##### 1.  Events and handling events
+* JavaScript event
+|-|-|
+|-|-|
+|Resource Events (e.g., load)|Network Events|
+|Focus Events (e.g., focus)|Websocket Events|
+|Form Events (submit)|Session History Events|
+|View Events (e.g., resize)|CSS Animation Events (animationstart)|
+|Keyboard Events (e.g., keypress)|Printing Events|
+|Mouse Events (e.g., click)|Clipboard Events|
+|Drag & Drop Events|Text Composition Events|
+|Media Events (e.g., play)|CSS events|
+|SVG events (SVGResize)|Script events|
+|Document events|Window events|
+|Popup events|DOM mutation events|
+|Touch events|...|
+(most used in visualizations)
 
+* **Event handling**
+    Once emitted, events are **propagated** in the DOM tree and processed by elements through event listeners
+    * Event listener:
+        * Function attached to elements used to handle specific events
+        * The handler is called according to a specific propagation phase
+
+    * Event propagation(传播) phases
+        <img src="./pic/7_3_1.png" width = "800" height = "350" alt="data_visualization" />
+
+    * JavaScript event loop
+        <img src="./pic/7_3_2.png" width = "800" height = "350" alt="data_visualization" />
+        * DOM level 0 inline (one event handler per element)
+        * DOM level 0 traditional (one event handler per element)
+        * DOM level 2 (multiple event handlers per element)
+    * Headling events with css hover pseudo-class
+        * A **CSS pseudo-class** is a keyword added to a selector that specifies a special state of the selected element(s).
+    * Headling events with D3
+        * d3.select("class").on("click", function(event) {})
+    * Headling events in D3 data join
+
+
+##### 2.  Updating visualizations
+* Updating the data
+* Data join selections
+* Updating scales and axes
+* Animated transitions
+
+
+
+
+&nbsp;
+&nbsp;
 
 # quiz
 
