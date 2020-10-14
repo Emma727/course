@@ -1040,13 +1040,103 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
     * Headling events with D3
         * d3.select("class").on("click", function(event) {})
     * Headling events in D3 data join
+        * read data and use .enter()
 
 
 ##### 2.  Updating visualizations
-* Updating the data
+*  Updating the data
+    * |Js array methods|explanation|
+    |-|-|
+    |*array.map*|returns array where a function is called on every element|
+    |*array.sort*|sorts in place the elements of the array.|
+    |*array.slice*|shallow copy of a portion of an array into a new array object|
+    |*array.shift*|remove the first element from the array|
+    |*array.splice*|changes array by removing existing and/or adding new elements|
+    * |D3-ARRAY METHODS|Explanation|
+    |-|-|
+    |*d3.min*|compute the minimum value in an array|
+    |*d3.max*|compute the maximum value in an array|
+    |*d3.ascending*|comparator function to use with array.sort|
+    |*d3.descending*|comparator function to use with array.sort|
 * Data join selections
+    * data join with enter selection (need data join on **update** and **exit** selections)
+    <img src="./pic/7_4_1.png" width = "800" height = "350" alt="data_visualization" />
+    * enter(), update(), exit()<br>
+        <img src="./pic/7_4_2.png" width = "400" height = "250" alt="data_visualization" /><br>
+        * Enter:data array size>selection size
+        * Update:data array size=selection size
+        * Exit:data array size < selection size
+    * THE GENERAL UPDATE PATTERN
+    |Method|explanation|
+    |-|-|
+|**DATA JOIN**|selection.data(dataset,key)<br>Join new data with old elements, if any.<br>Returns a reference to the update selection.|
+|**UPDATE** |Update old elements as needed.|
+|**ENTER** |selection.enter()<br>Create new elements as needed.|
+|**ENTER + UPDATE**| selection.merge(...)<br>Merge the entered elements with the update selection and apply operations to both.|
+|**EXIT**|selection.exit()<br>Remove old elements as needed.|
+    
 * Updating scales and axes
+    * 1. Adjust the scale properties:
+    ```js
+    var dataset = [{name: "A", frequency: .08167},
+  {name: "B", frequency: .01492},
+  {name: "C", frequency: .02780},
+  {name: "D", frequency: .04253},
+  {name: "E", frequency: .12702}];
+    y.domain([d3.min(dataset, function (d) { return d.frequency; }), 
+            d3.max(dataset, function (d) { return d.frequency; })])  
+    .range([0, 600]);
+    x.domain(dataset.map((d) => { return d.name; })) //ordinal scale
+    .range([0, width]);
+    ```
+    * 2. Redraw the axes:
+    ```js
+    svg.select('.axis')
+  .call(xAxis);
+    ```
 * Animated transitions
+    * html
+        * Done with CSS (hover)
+    * SVG
+        * Done with css: same as HTML with svg attributes(hover)
+    * Easing: css timing functions
+        * Method of distorting time to control apparent motion in animation. 
+        * The timing function defines an acceleration curve controlling the speed of the transition over its duration.
+    * D3
+    ```html
+    <svg id="svg20" style="background-color: mistyrose" width="100%" height="30px"></svg>
+    <script>
+    d3.select("#svg20")
+        .append("rect")
+        .attr("y", 5)
+        .attr("width", 480)
+        .attr("height", 20)
+        .attr("fill", "darkorange")
+        .on("mouseover", function () {
+        d3.select(this)
+        .transition()                   //selection.transition() works on the selection     
+        .delay(1000)                    //transition delay in ms                            
+        .duration(3000)                 //transition duration in ms                         
+        .ease(d3.easeBounce)            //specify easing function, defaults to d3.easeCubic 
+        .attr("width", 960)             //final transition state                            
+        .attr("fill", "cornflowerblue");//final transition state                            
+    })
+    .on("mouseout", function () {
+        d3.select(this)
+        .transition()
+        .delay(1000)
+        .duration(3000)
+        .attr("width", 480)
+        .attr("fill", "darkorange");
+    });
+
+    //Only one transition at the time per element!
+
+    //d3.transition() works also on data joins where                 
+    //function(d, i) {...} can be used with .delay() and .duration() 
+    //to implement staggered transitions                             
+    </script>
+    ```
 
 
 
