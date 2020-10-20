@@ -1138,8 +1138,97 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
     </script>
     ```
 
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Week8. Colors, Colors in D3, Complex D3 graphs
+
+&nbsp;
+&nbsp;
+
+### 8.1 Color perception
+Color is the perception of a kind of light
+
+#### 8.1.1 基本概念
+* **Color properties** distinguishable by the eye
+    |properties|discription|
+    |-|-|
+    |Hue (色彩)|Degree to which a stimulus can be described as similar to or different from stimuli that are described as red, orange, yellow, green, blue, and purple.|
+    |Saturation (饱和度)|Also called colorfulness, chroma, intensity, purity. It is the perceived intensity (chromatic strength) of a hue.|
+    |Brightness (亮度)|Attribute of a visual sensation according to which an area appears to emit more or less light.|
+
+* **Color vision**
+    * Color vision is the ability to discriminate light composed of different wavelengths
+    * Theories:
+        * Trichromatic theory (Young-Helmholtz) [Young 1802]
+        * Opponent process theory [Hering 1878]
+
+* **Trichromatic vision** 三色的
+    * Humans are routinely trichromatic*
+    * Trichromacy through 3 color photoreceptors (cone cells)
+    * We distinguish ~10 million different colors
+    <img src="./pic/8_1_1.png" width = "200" height = "200" alt="data_visualization" />
+    * Eye has 3 kinds of color receptors roughly corresponding to blue, green and red
+    * **Trichromatic theory problems**
+    <img src="./pic/8_1_2.png" width = "500" height = "450" alt="data_visualization" />
+
+* **Opponent process theory**
+    * The visual system responds to opponent channels
+Chromatic channel	red	vs.	green <br>
+Chromatic channel	blue	vs.	yellow<br>
+Achromatic channel	black	vs.	white<br>
 
 
+#### 8.1.2 颜色错觉和原因
+* **Simulaneous contrast**
+人眼是根据周围的颜色来决定看到的东西是什么颜色的，会导致在不同的背景下，同一个颜色会看起来不一样<br>
+Colors of different objects affect each other
+
+* Color constancy 
+    尽管光线（阴影/阳光）不一样，也可以认清同一个颜色
+    * Color perception to ensure colors remain constant under varying illumination
+    * Helps identify objects at different times of the day and lighting
+
+* Opponent cells
+    * Single opponent cell
+    * Double opponent cell
+        * evidence that color constancy is supported by double-opponent
+        * Double opponent cells have a large receptive field than single-opponent cells
+<img src="./pic/8_2_1.png" width = "500" height = "450" alt="data_visualization" />
+
+* **Lateral inhibition** 横向抑制
+    Lateral inhibition explains *simultaneous contrast*:
+    * Left: light background causes greater inhibition at the center making the gray surface appear darker
+    * Right: dark background causes smaller inhibition at the center making the gray surface appear lighter
+<img src="./pic/8_2_2.png" width = "500" height = "150" alt="data_visualization" />
+<br>
+
+* **Mach Bands Illusion** (1865)
+不同颜色接触链接之后，会因为lateral inhibition幻觉颜色相差更加大了
+The illusion appears as soon as the bands touch. Mach conjectured that filtering is performed in the retina itself by lateral inhibition.
+
+* Color blindness (色盲)
+Affects ~9% of the population
+<img src="./pic/8_1_5.png" width = "500" height = "450" alt="data_visualization" />
+
+### 8.2 Color theory
+**Color theory**: Practical guidance to color mixing and the visual effects of color combinations<br>
+**Color Model**: Abstract mathematical model describing the way colors can be represented as tuples.
+
+* HTML (SVG) COLOR MODEL
+    * Colors as tuples: (red, green, blue)
+    * 8 bits per channel, i.e., 256x256x256 (~16.7M) colors
+    * Channel: [0, 255] or hex, e.g., AF = (10 × 16¹) + (15 × 16⁰) = 175
+    * Opacity as value ∈ [0, 1], 0 ≡ transparent, 1 ≡ opaque
+<img src="./pic/8_2_3.png" width = "500" height = "450" alt="data_visualization" />
+
+### 8.3 Color design
+
+### 8.4 Colors in D3
+
+### 8.5 Complex D3 graphs
 
 &nbsp;
 &nbsp;
