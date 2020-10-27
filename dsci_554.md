@@ -6,6 +6,7 @@
     * [Week5. The eye and the visual brain, D3 scales and exes](#Week5-The-eye-and-the-visual-brain-D3-scales-and-exes)
     * Week6. Project proposal presentation
     * [Week7. pre-attentive features, interactive visualizations with d3](#Week7-pre-attentive-features-interactive-visualizations-with-d3)
+    * [Week8. Colors, Colors in D3, Complex D3 graphs](#Week8-Colors-Colors-in-D3-Complex-D3-graphs)
 * [quiz](#quiz)
     * [quiz4](#quiz4)
 
@@ -1232,6 +1233,163 @@ Affects ~9% of the population
 
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
+
+
+# Week9. Depth Perception and design, maps
+
+&nbsp;
+&nbsp;
+
+### 9.1 Depth perception and design considerations
+
+* **Depth information and depth cues**
+    <img src="./pic/9_1_1.png" width = "700" height = "250" alt="data_visualization" />
+    * Oculomotor 动态的
+        * Accommodation: coordinated changes in vergence, lens shape and pupil size
+        * Convergence: movement of both eyes to center image is in the retina
+        * Myosis: constriction (squeezing) of the pupil 
+    * visual 
+        * monocular 单眼的
+            * static (classic pictorial cues)
+                * Occlusions 遮蔽现象 An object blocks another
+                * Linear perspective convergence 透视线
+                * Relative size, Familiar size 大小来确认远近
+                * Texture Gradient 纹理坡度 
+                * Shadows
+                * Shading 阴影 DEPICTING DEPTH IN 3D MODELS OR ILLUSTRATIONS BY VARYING LEVELS OF DARKNESS
+                * Defocus blur 散焦模糊
+                * Atmospheric perspective 雾化效果
+            * motion-based 会有视差 
+                * Motion parallax (近处的物体移动的更快)
+                * Occlusion in motion (using deletion & accretion)
+                * Structure (产生深度)
+        * binocular 
+            * Stereopsis 立体视差
+
+* **Some (more) illusions**
+    * Size constancy (Ponzo) illusion
+        * human mind judges an object's size based on its background
+    * Poggendorff illusion 被遮住的线不是连着的
+    * Shepard tables illusion
+    * Muller-lyer illusion 箭头视觉延长/缩短
+    * Necker Cube illusion 
+    * Ames room
+
+* **Design Considerations**
+2.5d design。 google map等slide maps都用的是这种设计<br>
+Isometric projection 等轴投影: orthographic projection with coordinate axes appearing equally foreshortened and at 120 degrees from each other
+
+### 9.2 Introduction to maps
+
+* **Thematic map** 主题地图
+|map|content|
+|-|-|
+|Dot Map|Can be used to locate each occurrence of a phenomenon. One-to-one or one-to-many.|
+|Cartogram 统计地图|Area used to display value. Distortion used to show continuous variables|	
+|Choropleth 等值区域图|Areas are shaded or patterned in proportion to variable.(感染统计)|
+|Proportional Symbol Map|Scaled symbols show data for areas locations. Also called Graduated Symbol Map.|
+|Isopleth 等值线图|Use contours to show continuous variables. Also called Isarithmic.|
+
+* DASYMETRIC MAP 等值密度地图
+Refined choropleth map where ancillary(辅助的) information is used to model a phenomena
+<img src="./pic/9_2_1.png" width = "700" height = "250" alt="data_visualization" />
+
+* **HOW MAPS ARE BUILT?**
+    <img src="./pic/9_2_2.png" width = "600" height = "200" alt="data_visualization" />
+    * 1. Reference (earth => sphere ellipsoid)
+        * geographic coordinates 经纬度算角度
+        * reference ellipsoid 测量形状
+            * World Geodetic System 1984 (WGS 84), used for GPS
+            * 因为地球是椭圆的，所以有些地方映射的时候并不是按照圆心来的，而会有一个地理上的圆心。
+    * 2. Scale (scaled reference surface)
+        * geocentric datum 适合地球地图
+        * geodetic datum 平衡地面高低，适合local地图
+            * A coordinate system and reference to locate places
+            * Horizontal datum (reference ellipsoid)
+            * Vertical datum by:
+                * Geodetic (based on ellipsoid)
+                * Tidal (based on sea levels)
+                * Gravimetric (based on a geoid)
+        * properties preserved 
+            |Name|Property preserved|理解|
+            |-|-|-|
+            |Conformal|Shape of small regions. At any point same scale in all directions, 90 degree between parallels and meridians, angles preserved at each point.|小块形状一样|
+            |Equal-area|Areas proportional to areas on Earth|各块面积一样|
+            |Equidistant|Scale along one or more lines, or from one or two points to all other points|各块点线距离一样|
+            |Azimuthal (true direction)|Directions from a central point: great circles through the central point are straight lines|方向一样|
+            * 不能同时使用两种scale的方法。
+    * 3. Project (map)
+        * projection types<br>
+            cylindrical, conical, azimuthal<br>
+        * projection sub-tyeps<br>
+            intersection 切面 (Tangent or Secant)<br>
+            orientation 不同方向映射 normal,transverse, oblique<br>
+        * common projection
+            * Lambert azimuthal equal-area <br>
+                azimuthal projection, equal area, choropleth maps<br>
+            * Albers conic<br>
+                conic projection, equal area, choropleth maps<br>
+            * Lambert conformal conic (LCC) <br>
+                conic projection, conformal, aeronautical charts<br>
+            * Mercator projection <br>
+                cylindrical projection, conformal, web mapping applications.<br>
+            * Universal transverse Mercator (UTM)<br>
+                secant cylindrical transverse Mercator, conformal, using cartesian coordinates (Easting and Northing).
+
+
+
+### 9.3 Working with maps
+* map formats
+    * raster (img)
+    * vector (svg)
+
+* **Map data formats and map rendering software**
+    * Raster or vector images, e.g., with img or svg and d3.
+    * Interactive raster or vector tiles (slippy maps) with maps apps, e.g., leaflet, mapbox.
+    * JSON (GeoJSON, TopoJSON), with d3 and maps apps, e.g., leaflet, mapbox.
+    * Shapefiles (ESRI proprietary format), with some maps apps and specialized GIS software.
+
+* **GEOJSON**
+    * **Geometry**: Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, GeometryCollection
+        ```json
+        "geometry": {
+        "type": "Point",
+        "coordinates": [-118.2851, 34.0224]
+        }
+        ```
+    * **Feature**: one or more geometry object with properties
+        ```json
+        {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.2851, 34.0224]
+        },
+        "properties": { "name": "USC" }
+        }
+        ```
+    * **FeatureCollection**: one or more Features
+        ```json
+        {
+            "type": "FeatureCollection",
+            "features": [ ... ]
+        }
+        ```
+
+* **TOPOJSON**
+    1. Boundaries of contiguous states are duplicated in GeoJSON leading to large file sizes
+    2. GeoJSON extension encoding topology up to 80% smaller than GeoJSO ('Geometry' indexed with 'arcs')
+
+* geojson and topojson files
+    * Geometry in geographical or projected coordinates
+    * Arbitrary extensions, e.g., .json, .geojson, .topojson
+    * Can be used while loading data separately as CSV, json:
+        * Nest d3.json and d3.csv
+        * Use *d3-queue*, e.g., *block 1696080*
+        * Use ES6 *Promise.all()*
+    * Can embed the data as properties
 
 # quiz
 
