@@ -1278,9 +1278,9 @@ Affects ~9% of the population
     * Necker Cube illusion 
     * Ames room
 
-* **Design Considerations**
-2.5d design。 google map等slide maps都用的是这种设计<br>
-Isometric projection 等轴投影: orthographic projection with coordinate axes appearing equally foreshortened and at 120 degrees from each other
+* **Design Considerations**<br>
+    2.5d design。 google map等slide maps都用的是这种设计<br>
+    Isometric projection 等轴投影: orthographic projection with coordinate axes appearing equally foreshortened and at 120 degrees from each other
 
 ### 9.2 Introduction to maps
 
@@ -1293,9 +1293,9 @@ Isometric projection 等轴投影: orthographic projection with coordinate axes 
     |Proportional Symbol Map|Scaled symbols show data for areas locations. Also called Graduated Symbol Map.|
     |Isopleth 等值线图|Use contours to show continuous variables. Also called Isarithmic.|
 
-* DASYMETRIC MAP 等值密度地图
-Refined choropleth map where ancillary(辅助的) information is used to model a phenomena
-<img src="./pic/9_2_1.png" width = "700" height = "250" alt="data_visualization" />
+* DASYMETRIC MAP 等值密度地图<br>
+    Refined choropleth map where ancillary(辅助的) information is used to model a phenomena
+    <img src="./pic/9_2_1.png" width = "700" height = "250" alt="data_visualization" />
 
 * **HOW MAPS ARE BUILT?**<br>
     <img src="./pic/9_2_2.png" width = "600" height = "200" alt="data_visualization" />
@@ -1327,7 +1327,7 @@ Refined choropleth map where ancillary(辅助的) information is used to model a
         * projection sub-tyeps<br>
             intersection 切面 (Tangent or Secant)<br>
             orientation 不同方向映射 normal,transverse, oblique<br>
-        * common projection
+        * **common projection**
             * Lambert azimuthal equal-area <br>
                 azimuthal projection, equal area, choropleth maps<br>
             * Albers conic<br>
