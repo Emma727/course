@@ -1297,7 +1297,7 @@ Isometric projection 等轴投影: orthographic projection with coordinate axes 
 Refined choropleth map where ancillary(辅助的) information is used to model a phenomena
 <img src="./pic/9_2_1.png" width = "700" height = "250" alt="data_visualization" />
 
-* **HOW MAPS ARE BUILT?**
+* **HOW MAPS ARE BUILT?**<br>
     <img src="./pic/9_2_2.png" width = "600" height = "200" alt="data_visualization" />
     * 1. Reference (earth => sphere ellipsoid)
         * geographic coordinates 经纬度算角度
