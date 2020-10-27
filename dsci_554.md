@@ -7,6 +7,7 @@
     * Week6. Project proposal presentation
     * [Week7. pre-attentive features, interactive visualizations with d3](#Week7-pre-attentive-features-interactive-visualizations-with-d3)
     * [Week8. Colors, Colors in D3, Complex D3 graphs](#Week8-Colors-Colors-in-D3-Complex-D3-graphs)
+    * [Week9. Depth Perception and design, maps](#Week9-Depth-Perception-and-design-maps)
 * [quiz](#quiz)
     * [quiz4](#quiz4)
 
@@ -1283,14 +1284,14 @@ Isometric projection 等轴投影: orthographic projection with coordinate axes 
 
 ### 9.2 Introduction to maps
 
-* **Thematic map** 主题地图
-|map|content|
-|-|-|
-|Dot Map|Can be used to locate each occurrence of a phenomenon. One-to-one or one-to-many.|
-|Cartogram 统计地图|Area used to display value. Distortion used to show continuous variables|	
-|Choropleth 等值区域图|Areas are shaded or patterned in proportion to variable.(感染统计)|
-|Proportional Symbol Map|Scaled symbols show data for areas locations. Also called Graduated Symbol Map.|
-|Isopleth 等值线图|Use contours to show continuous variables. Also called Isarithmic.|
+* **Thematic map** 主题地图<br>
+    |map|content|
+    |-|-|
+    |Dot Map|Can be used to locate each occurrence of a phenomenon. One-to-one or one-to-many.|
+    |Cartogram 统计地图|Area used to display value. Distortion used to show continuous variables|	
+    |Choropleth 等值区域图|Areas are shaded or patterned in proportion to variable.(感染统计)|
+    |Proportional Symbol Map|Scaled symbols show data for areas locations. Also called Graduated Symbol Map.|
+    |Isopleth 等值线图|Use contours to show continuous variables. Also called Isarithmic.|
 
 * DASYMETRIC MAP 等值密度地图
 Refined choropleth map where ancillary(辅助的) information is used to model a phenomena
@@ -1312,7 +1313,7 @@ Refined choropleth map where ancillary(辅助的) information is used to model a
                 * Geodetic (based on ellipsoid)
                 * Tidal (based on sea levels)
                 * Gravimetric (based on a geoid)
-        * properties preserved 
+        * properties preserved <br>
             |Name|Property preserved|理解|
             |-|-|-|
             |Conformal|Shape of small regions. At any point same scale in all directions, 90 degree between parallels and meridians, angles preserved at each point.|小块形状一样|
