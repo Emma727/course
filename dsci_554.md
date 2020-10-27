@@ -1299,12 +1299,12 @@ Affects ~9% of the population
 
 * **HOW MAPS ARE BUILT?**<br>
     <img src="./pic/9_2_2.png" width = "600" height = "200" alt="data_visualization" />
-    * 1. Reference (earth => sphere ellipsoid)
+    * **1. Reference (earth => sphere ellipsoid)**
         * geographic coordinates 经纬度算角度
         * reference ellipsoid 测量形状
             * World Geodetic System 1984 (WGS 84), used for GPS
             * 因为地球是椭圆的，所以有些地方映射的时候并不是按照圆心来的，而会有一个地理上的圆心。
-    * 2. Scale (scaled reference surface)
+    * **2. Scale (scaled reference surface)**
         * geocentric datum 适合地球地图
         * geodetic datum 平衡地面高低，适合local地图
             * A coordinate system and reference to locate places
@@ -1321,7 +1321,7 @@ Affects ~9% of the population
             |Equidistant|Scale along one or more lines, or from one or two points to all other points|各块点线距离一样|
             |Azimuthal (true direction)|Directions from a central point: great circles through the central point are straight lines|方向一样|
             * 不能同时使用两种scale的方法。
-    * 3. Project (map)
+    * **3. Project (map)**
         * projection types<br>
             cylindrical, conical, azimuthal<br>
         * projection sub-tyeps<br>
@@ -1381,7 +1381,9 @@ Affects ~9% of the population
 
 * **TOPOJSON**
     1. Boundaries of contiguous states are duplicated in GeoJSON leading to large file sizes
-    2. GeoJSON extension encoding topology up to 80% smaller than GeoJSO ('Geometry' indexed with 'arcs')
+    2. GeoJSON extension encoding topology <br>
+        up to 80% smaller than GeoJSO <br>
+        geojson 'Geometry' indexed with 'arcs' <br>
 
 * geojson and topojson files
     * Geometry in geographical or projected coordinates
