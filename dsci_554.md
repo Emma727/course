@@ -1339,8 +1339,6 @@ Affects ~9% of the population
             * Universal transverse Mercator (UTM)<br>
                 secant cylindrical transverse Mercator, conformal, using cartesian coordinates (Easting and Northing).
 
-
-
 ### 9.3 Working with maps
 * map formats
     * raster (img)
@@ -1393,6 +1391,30 @@ Affects ~9% of the population
         * Use *d3-queue*, e.g., *block 1696080*
         * Use ES6 *Promise.all()*
     * Can embed the data as properties
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Week10. Statistics review, statistical graphic    
+
+&nbsp;
+&nbsp;
+
+### 10.1 Basics of statistics and modeling
+* **Depth information and depth cues**
+
+### 10.2 Statistical graphics
+### 10.3 Tools
+
+
+
+
+
+
 
 # quiz
 
