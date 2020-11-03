@@ -1405,7 +1405,14 @@ Affects ~9% of the population
 &nbsp;
 
 ### 10.1 Basics of statistics and modeling
-* **Depth information and depth cues**
+
+* **Statistics**
+    * Descriptive statistics 描述统计
+        * summarize (i.e. one number stands for a group of numbers) the data
+        * Examples: mean, median, SD
+    * Inferential statistics 推论统计
+        * infer (model) population data from sample data
+        * Examples: hypothesis testing, regression analysis
 
 ### 10.2 Statistical graphics
 ### 10.3 Tools
