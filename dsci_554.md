@@ -1414,7 +1414,66 @@ Affects ~9% of the population
         * infer (model) population data from sample data
         * Examples: hypothesis testing, regression analysis
 
+* **Nomenclature** 命名法
+    <img src="./pic/10_1_1.png" width = "400" height = "300" alt="data_visualization" />
+
+* **Quantiles**
+    <img src="./pic/10_1_2.png" width = "450" height = "400" alt="data_visualization" />
+
+* **Measures of central tendency**  
+    * skewness 歪斜
+
+* **Frequency & relative frequency**
+
+* Data types
+|statistic|nominal|ordinal|interval|ratio|
+|-|-|-|-|-|
+
+
 ### 10.2 Statistical graphics
+*Importance of graphing before analysis*
+
+* boxplot anatomy
+    * 4等分了数据，数据主要集中再中间的部分。
+        <img src="./pic/10_2_1.png" width = "150" height = "300" alt="data_visualization" /><br>
+        <img src="./pic/10_2_2.png" width = "200" height = "150" alt="data_visualization" />
+
+* Frequency distribution table
+    * often shown with ordered data, relative frequency and cumulative frequency
+        <img src="./pic/10_2_3.png" width = "200" height = "150" alt="data_visualization" />
+
+* stem-and-leaf plot
+    * shows the data and data distribution (skewness,modes,tails,outliers)
+    * steps:  
+        <img src="./pic/10_2_4.png" width = "250" height = "230" alt="data_visualization" />
+
+* histogram
+    * shows skewness, modes, tails, outliers
+        * Bar graph of frequencies for ordered, equal size bins
+        * Bars touch to imply continuity of bins
+        * Need to experiment with the bin size
+    * steps:
+    
+<img src="./pic/10_2_5.png" width = "250" height = "250" alt="data_visualization"/>
+
+* frequency polygon
+    * shows skewness, modes, tails, outliers
+
+* **confusion matrix**
+    * precision 预测为positive的里面有多少是真的positive 
+    * recall (sensitivity) 预测对的占真实对的比例
+    * specificity 预测为negative的有多少是真实也为negative的
+        <img src="./pic/10_2_6.png" width = "700" height = "400" alt="data_visualization" /><br>
+        <img src="./pic/10_2_7.png" width = "650" height = "140" alt="data_visualization" />
+
+* confusion matrix heatmap
+    * roc curve
+    <img src="./pic/10_2_8.png" width = "650" height = "450" alt="data_visualization" />
+
+* Confidence interval:
+    * interval of values for which a hypothesis test to the level of 5% cannot be rejected
+        * ≡ interval has a probability of 95% to contain the true value)
+
 ### 10.3 Tools
 
 
