@@ -1643,7 +1643,7 @@ Affects ~9% of the population
     |-|-|-|
     |Unlimited capacity|Limited capacity|Large capacity|
     |Retention: ≤1s|Retention: ≤30s|Retention: indefinite|
-    |High bandwidth<br>Works unconsciously<br>Provides  temporal integration<br>Continuity during saccades|  Buffer that stores temporary  information<br>Constructs and manipulate visual  images|Capacity increases over childhood, declines   with old age.<br>Encodes information semantically for     long term storage<br>Subject to fading, recalls help    preserve it|
+    |High bandwidth<br>Works unconsciously<br>Provides  temporal integration<br>Continuity during saccades|Buffer that stores temporary  information<br>Constructs and manipulate visual images|Capacity increases over childhood, declines with old age.<br>Encodes information semantically for long term storage<br>Subject to fading, recalls help preserve it|
 
 * VISUAL BANDWIDTH
 * ATTENTIONAL BOTTLENECK ( ⇒ VSTM CAPACITY)
@@ -1675,52 +1675,52 @@ Affects ~9% of the population
 ### 11.2 Gestalt
 * GESTALT* THEORY OF PERCEPTION [1890]
     * Definition: An organized whole that is perceived as more than the sum of its parts整体大于局部之和<Br>
-    <img src="./pic/11_2_1.png" width = "220" height = "200" alt="data_visualization" />
+        <img src="./pic/11_2_1.png" width = "220" height = "200" alt="data_visualization" />
         * Gestalt means *shape* in German, it is a psychology theory to understand the design implications of how we perceive patterns
 
 * GESTALT PRINCIPLES
-    * Emergence略微浮现（画重点）
+    * ***Emergence***略微浮现（画重点）
         * We perceive images as a whole
-    * Reification 能感知到除了重点以外的信息
+    * ***Reification*** 能感知到除了重点以外的信息
         * We perceive more than the stimulus contains
-    * Multi-stability 同一图片有很多个解释
+    * ***Multi-stability*** 同一图片有很多个解释
         * Some stimuli are perceived as changing between two or more interpretations
-    * Invariance 同一物体的不同角度都能被识别
+    * ***Invariance*** 同一物体的不同角度都能被识别
         * Simple objects are recognized independent of pose, * deformations, lighting, and features
 
 * GESTALT LAWS
-    * Pithiness (Prägnanz) 简化 
+    * ***Pithiness*** (Prägnanz) 简化 
         * We order our experience in a manner that is regular,orderly, symmetric, and simple
-    * Figure and ground 一个图片同时有两个女人(同一轮廓表示不同的部位)
+    * ***Figure and ground*** 一个图片同时有两个女人(同一轮廓表示不同的部位)
         * We tend to separate an object from its background
-    * Parallelism 平行
+    * ***Parallelism*** 平行
         * Parallel elements are seen as more related than elements not parallel
-    * Symmetry 对称
+    * ***Symmetry*** 对称
         * [    ]   {    }
         * We perceive objects as being symmetrical and forming    * around a center point
-    * Focal points 焦点
+    * ***Focal points*** 焦点
         * Elements with a point of interest, emphasis or difference will capture and hold attention
-    * Past experience 红绿灯
+    * ***Past experience*** 红绿灯
         * Elements are perceived according to past experience
 
 * Gestalt laws of grouping
-    * Proximity 更接近的归为一类
+    * ***Proximity*** 更接近的归为一类
         * Elements close together are perceived as grouped
-    * Similarity 相似的归为一类
+    * ***Similarity*** 相似的归为一类
         * Objects with similar appearance are perceived as grouped
-    * Closure 虚线图形自动填充轮廓
+    * ***Closure*** 虚线图形自动填充轮廓
         * Parts of an object tend to be grouped together and we perceive the whole figure
-    * Continuity 交错的不同颜色的线自动归类
+    * ***Continuity*** 交错的不同颜色的线自动归类
         * We perceive the pieces to form a continuation as parts of a whole object
-    * Common fate 相同动线归为一类
+    * ***Common fate*** 相同动线归为一类
         * Objects moving in the same direction are perceived as grouped
-    * Connection 互相连接归为一类
+    * ***Connection*** 互相连接归为一类
         * Objects that are connected are perceived as a group
-    * Common region 同一范围内的归为一类
+    * ***Common region*** 同一范围内的归为一类
         * Objects enclosed by a boundary are perceived as a group
 
-
-<img src="./pic/11_2_2.png" width = "750" height = "500"/>
+* conclusion
+    <img src="./pic/11_2_2.png" width = "750" height = "500"/>
 
 &nbsp;
 &nbsp;
@@ -1735,6 +1735,9 @@ Affects ~9% of the population
 * ACCURACY OF PERCEPTUAL TASKS [MCKINLEY 1986]
     * Higher tasks are accomplished more accurately than lower tasks.
     <img src="./pic/11_3_2.png" width = "600" height = "400"/>
+* ACCURACY OF PERCEPTUAL TASKS BY DATA TYPE [MCKINLEY 1986]
+    * Ranking of perceptual tasks. Tasks in gray boxes are not relevant to these types of data.
+    <img src="./pic/11_3_3.png" width = "600" height = "400"/>
 
 
 
