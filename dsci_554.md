@@ -1601,7 +1601,7 @@ Affects ~9% of the population
 &nbsp;
 &nbsp;
 
-### 11.1 Pattern recognition, memory
+### 12.1 Pattern recognition, memory
 
 * visual pathways (two stream hypothesis) 
     <img src="./pic/11_1_1.png" width = "480" height = "280" alt="data_visualization" />
@@ -1615,7 +1615,9 @@ Affects ~9% of the population
         * effect in which exposure to one stimulus influences a response to a later stimulus.
     * Apophenia幻想性错觉 
         * Perception of images or sounds in random stimuli
-    * Visual cortex areas 视觉皮质区域
+        * Priming increases likelihood of seeing the pattern
+        * Likely evolutionary process from Type I and II errors
+    * Visual cortex areas 视觉皮质区域<br>
         <img src="./pic/11_1_2.png" width = "340" height = "300" alt="data_visualization" />
     * NEURONAL TUNING 神经协调
         * **Convergence**: a group of cells form a receptive field for a cell in the brain
