@@ -1639,11 +1639,11 @@ Affects ~9% of the population
 
 * visual memory
     * <-- visual persistance            information persistance --><br>
-    |Iconic Memory|Visual Short-term<br>Memory (VSTM)|	Visual Long-term<br>Memory (VLTM)|
-    |-|-|-|
-    |Unlimited capacity|Limited capacity|Large capacity|
-    |Retention: ≤1s|Retention: ≤30s|Retention: indefinite|
-    |High bandwidth<br>Works unconsciously<br>Provides  temporal integration<br>Continuity during saccades|Buffer that stores temporary  information<br>Constructs and manipulate visual images|Capacity increases over childhood, declines with old age.<br>Encodes information semantically for long term storage<br>Subject to fading, recalls help preserve it|
+        |Iconic Memory|Visual Short-term<br>Memory (VSTM)|Visual Long-term<br>Memory (VLTM)|
+        |-|-|-|
+        |Unlimited capacity|Limited capacity|Large capacity|
+        |Retention: ≤1s|Retention: ≤30s|Retention: indefinite|
+        |High bandwidth<br>Works unconsciously<br>Provides  temporal integration<br>Continuity during   saccades|Buffer that stores temporary  information<br>Constructs and manipulate visual images|    Capacity increases over childhood, declines with old age.<br>Encodes information semantically for   long term storage<br>Subject to fading, recalls help preserve it|
 
 * VISUAL BANDWIDTH
 * ATTENTIONAL BOTTLENECK ( ⇒ VSTM CAPACITY)
@@ -1719,7 +1719,7 @@ Affects ~9% of the population
     * ***Common region*** 同一范围内的归为一类
         * Objects enclosed by a boundary are perceived as a group
 
-* conclusion
+* conclusion<br>
     <img src="./pic/11_2_2.png" width = "750" height = "500"/>
 
 &nbsp;
