@@ -1090,7 +1090,7 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
     .range([0, 600]);
     x.domain(dataset.map((d) => { return d.name; })) //ordinal scale
     .range([0, width]);
-    ```
+  ```
     * 2. Redraw the axes:
     ```js
     svg.select('.axis')
@@ -1288,7 +1288,7 @@ Affects ~9% of the population
     |map|content|
     |-|-|
     |Dot Map|Can be used to locate each occurrence of a phenomenon. One-to-one or one-to-many.|
-    |Cartogram 统计地图|Area used to display value. Distortion used to show continuous variables|	
+    |Cartogram 统计地图|Area used to display value. Distortion used to show continuous variables|
     |Choropleth 等值区域图|Areas are shaded or patterned in proportion to variable.(感染统计)|
     |Proportional Symbol Map|Scaled symbols show data for areas locations. Also called Graduated Symbol Map.|
     |Isopleth 等值线图|Use contours to show continuous variables. Also called Isarithmic.|
@@ -1659,14 +1659,17 @@ Affects ~9% of the population
     * **Apprehendable chunks**: unlearned pattern complexity that can be apprehended in one fixation
     * Apprehendable chunks consist of **about three components**
 * sketches素描 (easily understood complexpatterns)
+    
     * Sketches require less work to understandthan full-color, textured images.
 * groups of patterns & distorsions扭曲
+    
     * Neurons in higher visual cortex respondstrongly despite distortions
 * icons & spatial metaphors空间隐喻
 * Selective attentional tuning
     * Can focus on a layer of a set of superposed layers
     * Disrupted瓦解 when patterns are too similar, same as conjunction search
 * Isotype: 
+    
     * a symbolic representation of qualitative and quantitative information via easily interpretable icons (International System Of TYpographic Picture Education)
 
 &nbsp;
@@ -1687,6 +1690,7 @@ Affects ~9% of the population
         * Some stimuli are perceived as changing between two or more interpretations
     * ***Invariance*** 同一物体的不同角度都能被识别
         * Simple objects are recognized independent of pose, * deformations, lighting, and features
+    <img src="./pic/11_2_5.png" width = "300" height = "250" alt="data_visualization" />
 
 * GESTALT LAWS
     * ***Pithiness*** (Prägnanz) 简化 
@@ -1702,6 +1706,7 @@ Affects ~9% of the population
         * Elements with a point of interest, emphasis or difference will capture and hold attention
     * ***Past experience*** 红绿灯
         * Elements are perceived according to past experience
+    <img src="./pic/11_2_4.png" width = "500" height = "250" alt="data_visualization" />
 
 * Gestalt laws of grouping
     * ***Proximity*** 更接近的归为一类
@@ -1718,6 +1723,7 @@ Affects ~9% of the population
         * Objects that are connected are perceived as a group
     * ***Common region*** 同一范围内的归为一类
         * Objects enclosed by a boundary are perceived as a group
+    <img src="./pic/11_2_3.png" width = "500" height = "250" alt="data_visualization" />
 
 * conclusion<br>
     <img src="./pic/11_2_2.png" width = "750" height = "500"/>
