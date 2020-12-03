@@ -8,6 +8,11 @@
     * [Week7. pre-attentive features, interactive visualizations with d3](#Week7-pre-attentive-features-interactive-visualizations-with-d3)
     * [Week8. Colors, Colors in D3, Complex D3 graphs](#Week8-Colors-Colors-in-D3-Complex-D3-graphs)
     * [Week9. Depth Perception and design, maps](#Week9-Depth-Perception-and-design-maps)
+    * [Week10. Statistics review, statistical graphic](#Week10-Statistics-review-statistical-graphic)
+    * Week11. Graphing in notebooks
+    * [Week12. Patterns, memory, visual encodings, semiology and gestalt.](#Week12-Patterns-memory-visual-encodings-semiology-and-gestalt.)
+    * Week13. Writing the article for the final project. Resolving technical issues.
+    * Week14. Project predsrntation
 * [quiz](#quiz)
     * [quiz4](#quiz4)
 
@@ -44,7 +49,7 @@
 
 * units of data & inforamtion 
 
-<img src="./pic/1_1_3.png" width = "380" height = "230" alt="data_visualization" />
+<img src="./pic/1_1_3.png" width = "580" height = "380" alt="data_visualization" />
 
 &nbsp;
 
@@ -64,18 +69,38 @@ You are aware of just 0.7% of what you experience.
         * Some color combinations are differentiated by everyone (blue/yellow)
         * Some symbols are understood across cultures(emoj)
 
-----
+* Information vs. secientific visualization
+infovis vs. scivis<br>
+ <img src="./pic/1_2_1.png" width = "420" height = "280" alt="data_visualization" />
+
+
 &nbsp;
 
 ### 1.2 Examples and uses
 
-<img src="./pic/1_1_4.png"  width = "400" height = "230" alt="data_visualization" />
+* SIGNAGE ON MOVING WALKWAYS
+    * Affordances define what actions are possible.
+    * Signifiers specify how people discover those possibilities: signifiers are signs, perceptible signals of what can be done.
 
-&nbsp;
+* Visualization uses: 
+    communicate information / analyze & model data<br>
+    <img src="./pic/1_1_4.png"  width = "400" height = "230" alt="data_visualization" />
+    * can replace complex calculations
+    * can reveal complex patterns, trends and outliers 数字-->bar
+    * can reveal features not otherwise apparent  体现隐藏的信息
+    * can support memory and comprehension
+    * can tell a story
+    * can inform and engage more diverse audiences
+    * visualizations are means to reach goals
+    * information graphics (infographics) are devices whose aim is to help an audience complete certain tasks
 
 * Design Considerations
+    * designers & users
+        <img src="./pic/1_3_1.png" width = "420" height = "280" alt="data_visualization" />
+    * the form should be constrained by the goals of the visualization
+    * form follows function
+        * The shape of an object should primarily relate to its intended function or purpose
 
-<img src="./pic/1_3_1.png" width = "420" height = "280" alt="data_visualization" />
 
 &nbsp;
 
@@ -83,7 +108,17 @@ You are aware of just 0.7% of what you experience.
 
 <img src="./pic/1_4_1.png" width = "420" height = "240" alt="data_visualization" />
 
-<img src="./pic/1_4_2.png"  width = "420" height = "240" alt="data_visualization" />
+* D3.JS
+    * what is D3
+        * Javascript client-side library
+        * D3 stands for Data-Driven Documents
+        * Uses recent HTML, SVG, and CSS
+        * Primarily made to use SVG (not raster graphics, i.e., images)
+    * what it does
+        * Loads data in the browser memory
+        * Create elements and bind data to elements within the document
+        * Transform and customize elements
+        * Transition elements in response to user input
 
 &nbsp;
 &nbsp;
@@ -109,7 +144,7 @@ Datum is a given piece of data
             * Vs. non-dichotomous   eg,. Likert Chart)
     * Numerical
         * Ratio:  ordered, differences & doubling meaningful, 0 fixed<br>
-             eg., temperature in Kelvin (40=2×20), length, height
+             eg., temperature in Kelvin (40=2×20), length, height, dollar
         * Intervel:  ordered, differences meaningful, doubling not meaningful, 0 arbitrary<br>
              eg., temperature in Celsius (40≠2×20)/Fahrenheit, dates, locations
 
@@ -123,7 +158,7 @@ Datum is a given piece of data
          Implementation dependent details by which data is actually stored (with data types)
 
 * Visualization Reference Model
-    <img src="./pic/2_1_1.png" width = "580" height = "300" alt="data_visualization" />
+    <img src="./pic/2_1_1.png" width = "630" height = "400" alt="data_visualization" />
 <br>
 <br>
 
@@ -166,6 +201,7 @@ Datum is a given piece of data
 
         * <u>treemap</u>  (Hierarchical data as nested rectangles. Area proportional to value.)
         * <u>sunburst</u>和鸡冠图很像  (Hierarchical data as rings. Center is root node. Angles are equal or proportional to value.)
+        <img src="./pic/2_2_13.png" width = "500" height = "225" alt="data_visualization" />
     * Flowcharts
         * <u>Alluvial diagram</u> (Shows relations between multivariate data. Named after alluvial fans formed by soil deposited by streaming water.)
         * <u>Sankey Diagram</u>  (Magnitude of flow between nodes in a network)
@@ -222,6 +258,8 @@ Datum is a given piece of data
             * whitespace and line breaks disregarded
             * HTML documnet as a tree of html <u>elements</u> (tag with attributes)
             * two attibures (class & id) used to identify elements
+            * basic elements
+                <img src="./pic/2_3_7.png" width = "470" height = "320" alt="data_visualization" />
             * elements example : svg
                 <img src="./pic/2_3_2.png" width = "420" height = "240" alt="data_visualization" />
     * 2. CSS (Cascading Style Sheets)
@@ -324,7 +362,7 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
 ### 3.1 Design space and design trade-offs
 |less complex|more complex|explain|example|
 |-|-|-|-|
-|decoration|abstraction|measures the distance from referent to the representation|纸币图片 vs. 钱币符号|
+|figuration|abstraction|measures the distance from referent to the representation|纸币图片 vs. 钱币符号|
 |decoration|functionality|measures the amount of informative content|有装饰的图表 vs. 直白的图表|
 |lightness|density|measures the amount of content displayed in relation to space|一张图  vs.多个图平铺展示|
 |undimensionality|multidimensionality|measures the number of layers and forms used to encode the data|一张图 vs.多张图叠放展示|
@@ -338,7 +376,9 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
 
 * Document Object Model 
     * 把HTML解析成为树状的结构，并通过改变内容实现交互
-    <img src="./pic/3_2_1.png" width = "600" height = "210" alt="data_visualization" />
+        <img src="./pic/3_2_1.png" width = "600" height = "210" alt="data_visualization" />
+    * DOM example
+        <img src="./pic/3_2_2.png" width = "500" height = "250" alt="data_visualization" />
 
 <br>
 
@@ -350,7 +390,7 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
             ```<div>换行显示</div>```   
 
 * global vs. element spacific attributes
-    * global:
+    * global: (id, class, style)
         ```css
         <!-- Use id to reference containers for dynamic charts -->
         <div id="chart1"></div>  
@@ -368,6 +408,8 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
         <circle class="dot" cx="5" cy="5" r="2"/>
         </svg>
         ```
+        * style attribute (margins, borders, padding)
+            <img src="./pic/3_2_3.png" width = "500" height = "350" alt="data_visualization" />
     * element spacific attributes:
         ```css
         <!-- Use element specific attributes to place and size -->
@@ -377,12 +419,224 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
         <circle cx="5" cy="5" r="2"/>
         </svg>
         ```
-        
+* SVG
+    * explain:
+        * SVG elements are drawn in the <svg>
+        * Coordinate system in pixels starting up left corner of <svg>
+        * Painter's algorithm defines drawing order:
+            * coding order is drawing order (last drawn on top)
+    * HTML VS. SVG FOR CHARTING
+        <img src="./pic/3_2_4.png" width = "500" height = "350" alt="data_visualization" />
+    * svg basic shapes attributes 
+        * positions & size
+        * fill (interior color)
+        * stroke (border color)
+            ```javascript
+            <rect x="10" y="10" width="80" height="80" rx="5" ry="5" fill="orange"/>
+
+            <circle cx="150" cy="50" r="40" fill="green"/>
+
+            <ellipse cx="260" cy="50" rx="50" ry="25" fill="brown"/>
+
+            <line x1="320" y1="20" x2="380" y2="80" stroke="blue"/>
+
+            <polyline points="420,35 490,65 490,35 420,65" stroke="red" fill="none"/> 
+
+            <polygon points="560,10 600,30 600,70 560,90 520,70 520,30" fill="tan"/> 
+            ```
+        * attributes defaults
+            * Positions & size (e.g., x, y, x1, y1, x2, y2, cx, cy, width, height, r, rx, ry) defaults to 0 (圆会显示不全)
+            * Fill defaults to black for shapes and none for text
+            * Stroke defaults to 'none' 
+        * SVG styling properties
+            * Most ***but not all*** SVG attributes have CSS styling properties
+                <img src="./pic/3_2_5.png" width = "700" height = "400" alt="data_visualization" />
+    * text
+        * <<text>> x, y defaults to the bottom left of the text
+            <img src="./pic/3_2_6.png" width = "500" height = "300" alt="data_visualization" />
 
 
 ### 3.3 Introduction to D3
+* D3 is
+    * **TL;DR.**JavaScript library to bind data to the DOM, i.e., vocabulary of graphical marks come directly from web standards: HTML, SVG, and CSS.
+* To generate the graphic in the page:
+    1. Get the data
+    2. Use a D3 to map data as HTML elements that the browser renders in the page
+* 2 ways to use:
+    1. Select & append
+    2. With data join mechanism
+
+* Programming Paradigms & Visualization Tools
+    <img src="./pic/3_3_1.png" width = "500" height = "300" alt="data_visualization" />
+
+* About D3
+    * Library based on modern Web standards
+    * Created and maintained by Mike Bostock
+    * Website: https://d3js.org
+    * Documentation: https://github.com/d3/d3/wiki
+    * Gallery: https://github.com/d3/d3/wiki/Gallery
+    * D3 stands for Data-Driven Documents
+    * Concentrates on the data as opposed to the representation
+    * High expressiveness: good for custom/novel forms
+* What D3 does
+    1. Loads data in the browser (DOES NOT HIDE THE DATA!)
+    2. Binds data to document elements
+    3. Transforms elements by interpreting each element’s bound datum and setting its visual properties
+    4. Transitions elements between states in response to user input
+* BASIC D3 OPERATIONS
+    1. Select elements
+    2. Add new elements to selected elements
+    3. Delete selected elements
+    4. Modify selected elements for position and style
+* Function Chaining (Code Design Pattern)
+    * Allows to write code that is simpler to underst:
+        ```js
+        obj.method3(obj.method2(obj.method1()));
+
+        var s = obj.method1();
+        s = s.method2();
+        s = s.method3();
+
+        obj.method1()
+          .method2()
+          .method3();
+          ```
+    * Is implemented using "*this*":
+        ```js
+        var obj = {
+          method1: function() {
+            console.log('method1');
+            return this;  //in Javascript this refers to the current object instance
+          },
+          method2: function(a) {
+            console.log('method2');
+            return this;
+          } 
+        };
+
+        obj.method1().method2();
+          method1
+          method2
+        ```
+* How to use D3
+    1. SELECT ELEMENTS
+        * A D3 selection is a list (or array) of nodes with a parent
+        * select() and selectAll() return a selection
+        * selector is a CSS selector or a function
+        * Chaining syntax allows to select in a selection
+        ```js
+        var selection = d3.select(selector);  //select first matching element in the document
+        var selection = d3.selectAll(selector);  //select all matching elements in the document
+
+        var selection = selection.select(selector);  //select first matching element in the selection
+        var selection = selection.selectAll(selector);  //select all matching elements in the selection
+
+        var s = d3.select('body');  //selects <body> in <html>
+        s.select('p');  //selects first <p> in <body>
+
+        d3.select('body')  //same as above using chaining
+          .select('p');
+
+        d3.selectAll('p');  //selects all <p> in parent
+        d3.select('#chart');  //selects first element in parent with id="chart"
+        d3.selectAll('.red');  //selects all elements in parent with class="red"
+        ```
+    2. ADD NEW ELEMENTS
+        * Adding is done with a selection
+        * selection.append(type) appends a new element to the last child of each selected element
+        * selection.insert(type[, before]) inserts a new element before the first element matching the specified before selector for each selected element
+        * Returns the added elements!
+        ```js
+        <body></body>
+        d3.select('body')
+            .append('p')  //append p as the last child of body
+            .text('Text0');  //set text to "Text0"
+        <body><p>Text0</p></body>
+        d3.selectAll('p')  //selects all elements of type p
+            .append('p')  //set text to "Text1"
+            .text('Text1');  //
+        <body><p>Text0<p>Text1</p></p></body>
+        ```
+    3. DELETE SELECTED ELEMENTS
+        * Deleting is done with a selection
+        * selection.remove() Removes the selected elements from the document
+        * Returns the removed elements
+        ```js
+        <body><p>Text0</p></body>
+        d3.selectAll('p')  //selects all elements of type p
+          .remove();  //removes selected elements
+        <body></body>
+        ```
+    4. MODIFY SELECTED ELEMENTS
+        * Modifications are done on the selection
+        * selection.text(text) changes the text of HTML elements elements
+        * selection.style(style) sets the style of HTML elements elements
+        ```js
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        d3.selectAll('p')  //select all p in document
+          .text('Paragraph');
+        d3.select('p')  //select first p in document
+          .text('paragraph2');
+          .style('color', 'red');
+        ```
+    * USING SELECT AND APPEND FOR GRAPHING
+        ```js
+        <div id="chart"></div>
+
+        <script>
+        d3.select('#chart')
+          .append('div')
+          .attr('width', '300px')
+          .attr('background-color', '#eee')
+          .text('300,000');
+        </script>
+        ```
+* D3 data join
+    * Mechanism to bind data to elements in the document
+    * Central to D3 operations
+    * Works on the selection!
+        <img src="./pic/3_3_2.png" width = "500" height = "200" alt="data_visualization" />
+    * data join example
+        <img src="./pic/3_3_3.png" width = "500" height = "300" alt="data_visualization" />
+    * In the data join configurations are made with functions taking datum and index as arguments
+        <img src="./pic/3_3_4.png" width = "500" height = "300" alt="data_visualization" />
+    * In the data join data() must be an array
+        ```js
+        var dataset = [1, 2, 3]; //array!
+
+        d3.select('body')
+          .selectAll('p')
+          .data(dataset)
+          .enter()
+          ...
+        ```
+        * Examples arrays that can be passed to data()
+            ```js
+            var data = [  //array of objects
+              {name: 'A', frequency: .08167},
+              {name: 'B', frequency: .01492},
+              {name: 'C', frequency: .02780},
+              {name: 'D', frequency: .04253},
+              {name: 'E', frequency: .12702}
+            ];
+
+            var data = [  //array of arrays
+              [ 0,  1,  2,  3],
+              [ 4,  5,  6,  7],
+              [ 8,  9, 10, 11],
+              [12, 13, 14, 15]
+            ];
+            ```
 
 ### 3.4 Introduction to Vega and Vega-lite
+* define
+    * **TL;DR.** Graphic & data described as a JSON (Javascript) object
+* To generate a graphic in the page:
+    1. Write the description
+    2. Use a Javascript library that renders the description in the page
+* vega-lite and vega
+    <img src="./pic/3_4_1.png" width = "700" height = "470" alt="data_visualization" />
 
 
 
@@ -1661,17 +1915,17 @@ Affects ~9% of the population
     * **Apprehendable chunks**: unlearned pattern complexity that can be apprehended in one fixation
     * Apprehendable chunks consist of **about three components**
 * sketches素描 (easily understood complexpatterns)
-    
+  
     * Sketches require less work to understandthan full-color, textured images.
 * groups of patterns & distorsions扭曲
-    
+  
     * Neurons in higher visual cortex respondstrongly despite distortions
 * icons & spatial metaphors空间隐喻
 * Selective attentional tuning
     * Can focus on a layer of a set of superposed layers
     * Disrupted瓦解 when patterns are too similar, same as conjunction search
 * Isotype: 
-    
+  
     * a symbolic representation of qualitative and quantitative information via easily interpretable icons (International System Of TYpographic Picture Education)
 
 &nbsp;
