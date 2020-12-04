@@ -757,7 +757,7 @@ The interior decoration of graphics generates a lot of ink that does not tell th
 The purpose of decoration varies — to make the graphic appear more scientific and precise, to enliven the display, to give the designer an opportunity to exercise artistic skills.<br>
 Regardless of its cause, it is all non-data-ink or redundant data-ink, and it is often chartjunk.<Br>
 
-##### 2. Night Holmes' design principle
+##### 2. Nigel Holmes' design principle
 Use humor to instill affection in readers for numbers and charts
 (用幽默向读者灌输对数字和图表的喜爱)
 * Screen Time spent looking at different chart elements
