@@ -2262,17 +2262,18 @@ Affects ~9% of the population
 
 * VISUAL BANDWIDTH
 * ATTENTIONAL BOTTLENECK ( ⇒ VSTM CAPACITY)
-     <img src="./pic/11_1_5.png" width = "550"height = "350" alt="data_visualization" />
+     <img src="./pic/11_1_7.png" width = "400" height = "350" alt="data_visualization" />
 * MILLER'S LAW [MILLER, 1956]
     * **The Magical Number Seven, Plus or MinusTwo**
     * Limits of short-term memory in a 1-Dinformation judgment task [Miller, 1956]
     * Limit is dependent on the type information:
         * 4-5 items with characters [Sperling,1960]
         * 3-4 items with basic visual features &interference task [Luck & Vogel, 1997]<br>
-     <img src="./pic/11_1_6.png" width = "400"height = "200" alt="data_visualization" />
+     <img src="./pic/11_1_6.png" width = "400" height = "200" alt="data_visualization" />
 * Apprehendable chunk (learnable composite pattern)
     * **Apprehendable chunks**: unlearned pattern complexity that can be apprehended in one fixation
     * Apprehendable chunks consist of **about three components**
+        <img src="./pic/11_1_8.png" width = "400" height = "200" alt="data_visualization" />
 * sketches素描 (easily understood complexpatterns)
   
     * Sketches require less work to understandthan full-color, textured images.
@@ -2290,7 +2291,7 @@ Affects ~9% of the population
 &nbsp;
 &nbsp;
 
-### 11.2 Gestalt
+### 12.2 Gestalt
 * GESTALT* THEORY OF PERCEPTION [1890]
     * Definition: An organized whole that is perceived as more than the sum of its parts整体大于局部之和<Br>
         <img src="./pic/11_2_1.png" width = "220" height = "200" alt="data_visualization" />
@@ -2346,7 +2347,7 @@ Affects ~9% of the population
 &nbsp;
 &nbsp;
 
-### 11.3 Marks and encodings
+### 12.3 Marks and encodings
 * SEMIOLOGY OF GRAPHICS [BERTIN 1967]
     * Visual language is a sign language
     * Sender encodes information in signs, receiver decodes information from signs
@@ -2360,7 +2361,202 @@ Affects ~9% of the population
     * Ranking of perceptual tasks. Tasks in gray boxes are not relevant to these types of data.
     <img src="./pic/11_3_3.png" width = "600" height = "400"/>
 
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
+# Week12(extra). 3D DATA VISUALIZATION TOOLS
+### 13.1 Overview
+<br><img src="./pic/13_1_1.png" width = "600" height = "300" alt="data_visualization" />
+
+### 13.2 Canvas
+* canvas
+    * explain `<canvas style="background-color: orangered;" width="200" height="200"/></canvas>`
+        * Raster (pixels)
+        * Render 2D with '2d' context & Canvas API
+        * Render 3D with 'webgl' context & WebGL
+    * canvas API example
+        ```js
+        <canvas style="background-color: orangered;" width="200" height="200"></canvas>
+        <canvas id="canvas" width="150" height="150"></canvas>
+        <script type="application/javascript">
+          var canvas = document.getElementById("canvas");
+          if (canvas.getContext) {
+            var ctx = canvas.getContext('2d'); //initialize 2d context
+        
+            ctx.fillStyle = 'rgb(200, 0, 0)';
+            ctx.fillRect(10, 10, 50, 50);
+        
+            ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+            ctx.fillRect(30, 30, 50, 50);
+          }
+        </script>
+        ```
+        <br><img src="./pic/13_2_1.png" width = "600" height = "300" alt="data_visualization" />
+
+### 13.3 WebGL
+* WebGL
+    * explain
+        * Web Graphics Library, a W3 standard
+        * JS API for OpenGL ES 2.0 (OpenGL for mobile devices)
+        * 2D & 3D interactive rendering in HTML5 canvas
+        * GPU accelerated rendering
+        * Popular JS libraries based on WebGL
+            * Three.js
+            * PhiloGL
+            * GLGE
+            * P5.js
+    * WEBGL vs SVG
+        |-|SVG|WebGL|
+        |-|-|-|
+        |Supports 3D content||✓|
+        |DOM Interaction|✓||
+        |Declarative scenegraph||✓|
+        |CSS Integration|✓||
+        |Scripting access|✓|✓|
+    * WebGL API: 2D and 3D graphics
+        ```js
+        <canvas id="glCanvas" width="100" height="100"></canvas>
+        <script type="application/javascript">
+          main();
+          function main() {
+            const canvas = document.querySelector("#glCanvas");
+            const gl = canvas.getContext("webgl");  //initialize GL context     
+
+            if (gl === null) {
+              alert("Unable to initialize WebGL.");
+              return;
+            }       
+
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);  //set clear color to black
+            gl.clear(gl.COLOR_BUFFER_BIT);  //clear color buffer
+          }
+        </script>
+        ```
+        <br><img src="./pic/13_3_1.png" width = "600" height = "300" alt="data_visualization" />
+    * WebGL Primitives 基本体
+        
+        * <img src="./pic/13_3_2.png" width = "600" height = "300" alt="data_visualization" />
+    * graphic pipeline
+        * Geometry arrays: vertices, normals, color, texture coordinates...
+        * Triangles as indexed arrays
+        * Arrays passed to GPU as buffers
+        * Fragment shader operations include texture mapping and lighting
+            * <img src="./pic/13_3_3.png" width = "700" height = "300" alt="data_visualization" />
+    * defining a virtual camera - projection matrix
+        * <img src="./pic/13_3_4.svg" width = "400" height = "300" alt="data_visualization" />
+        * objects in relation to the camera - model and view matrices
+            * <img src="./pic/13_3_5.png" width = "600" height = "200" alt="data_visualization" />
+
+### 13.4 three.js
+* three.js
+    * explain
+        * High-level access to WebGL and graphical utilities:
+            * Scene
+            * Camera
+            * Geometry
+            * 3D Model Loaders
+            * Lights
+            * Materials
+            * Shaders
+            * Particles
+            * Animation
+            * Math Utilities
+    * example
+        ```js
+        <canvas id="canvas" style="width: 600px; height: 600px;">
+
+        <script type="application/javascript">
+          var scene = new THREE.Scene();
+          var camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+          camera.position.set(0, 0, 2);  //camera.position.z = 2;
+          //camera.lookAt(0, 0, 0);
+
+          var renderer = new THREE.WebGLRenderer({ canvas: canvas });
+          renderer.setSize(600, 600);
+
+          var geometry = new THREE.BoxGeometry(1, 1, 1);
+          var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
+          var cube = new THREE.Mesh(geometry, material);
+          scene.add(cube);
+
+          var light = new THREE.PointLight(0xFFFFFF);
+          light.position.set(2, 2, 2);
+          scene.add(light);
+
+          var anim1 = () => {
+        	requestAnimationFrame(anim1)
+        	renderer.render(scene, camera)
+
+        	cube.rotation.x += Math.PI / 180
+        	cube.rotation.y += Math.PI / 180
+        	cube.rotation.z += Math.PI / 180
+          }
+
+          anim1();
+        </script>
+        ```
+### 13.5 Processing, Processing.js, P5.js
+* Sketchbook and language for learning how to code targeted at visual arts
+    * Processing Simplified Java API for drawing and graphics [Fry & Reas 2001]
+    * Processing.js JS API to use Processing code [Resig 2008]
+    * P5.js HTML5 processing implementation Gallery [McCarthy 2015]
+    * *All support 2D and 3D <canvas> contexts*
+* example(p5.js)
+    ```js
+    <script src="p5.min.js"></script>
+
+    <script>
+    int[] angles = { 30, 10, 45, 35, 60, 38, 75, 67 };     
+
+    void setup() {
+      size(640, 360);
+      noStroke();
+      noLoop();  // Run once and stop
+    }      
+
+    void draw() {
+      background(100);
+      pieChart(300, angles);
+    }      
+
+    void pieChart(float diameter, int[] data) {
+      float lastAngle = 0;
+      for (int i = 0; i < data.length; i++) {      
+	float gray = map(i, 0, data.length, 0, 255);       
+	fill(gray);    
+	arc(width/2,       
+	  height/2,    
+	  diameter,    
+	  diameter,    
+	  lastAngle,       
+	  lastAngle+radians(data[i]));     
+	lastAngle += radians(data[i]);
+      }
+    }
+    </script>
+    ```
+    <br><img src="./pic/13_5_1.png" width = "400" height = "300" alt="data_visualization" />
+### 13.6 Examples & demos
+* deck.gl
+    * deck.gl is a WebGL-powered framework for visual exploratory data analysis of large datasets
+        * deck.gl Examples
+        * deck.gl Showcase
+        * deck.gl Observable Getting Started
+        * deck.gl CodePen showcase
+        * deck.gl CodePen HexagonLayer demo
+    * example
+        ```
+        cd ~/repos
+        git clone https://github.com/visgl/deck.gl.git
+        cd deck.gl/examples/get-started/pure-js/mapbox
+        less README.md
+        npm install
+        npm start
+        ```
 
 # quiz
 
