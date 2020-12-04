@@ -1386,18 +1386,18 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
 ##### 2.  Updating visualizations
 *  Updating the data
     * |Js array methods|explanation|
-    |-|-|
-    |*array.map*|returns array where a function is called on every element|
-    |*array.sort*|sorts in place the elements of the array.|
-    |*array.slice*|shallow copy of a portion of an array into a new array object|
-    |*array.shift*|remove the first element from the array|
-    |*array.splice*|changes array by removing existing and/or adding new elements|
+      |-|-|
+      |*array.map*|returns array where a function is called on every element|
+      |*array.sort*|sorts in place the elements of the array.|
+      |*array.slice*|shallow copy of a portion of an array into a new array object|
+      |*array.shift*|remove the first element from the array|
+      |*array.splice*|changes array by removing existing and/or adding new elements|
     * |D3-ARRAY METHODS|Explanation|
-    |-|-|
-    |*d3.min*|compute the minimum value in an array|
-    |*d3.max*|compute the maximum value in an array|
-    |*d3.ascending*|comparator function to use with array.sort|
-    |*d3.descending*|comparator function to use with array.sort|
+      |-|-|
+      |*d3.min*|compute the minimum value in an array|
+      |*d3.max*|compute the maximum value in an array|
+      |*d3.ascending*|comparator function to use with array.sort|
+      |*d3.descending*|comparator function to use with array.sort|
 * Data join selections
     * data join with enter selection (need data join on **update** and **exit** selections)
     <img src="./pic/7_4_1.png" width = "800" height = "350" alt="data_visualization" />
@@ -1407,13 +1407,13 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
         * Update:data array size=selection size
         * Exit:data array size < selection size
     * THE GENERAL UPDATE PATTERN<br>
-    |Method|explanation|
-    |-|-|
-    |**DATA JOIN**|selection.data(dataset,key)<br>Join new data with old elements, if any.<br>Returns a        reference to the update selection.|
-    |**UPDATE** |Update old elements as needed.|
-    |**ENTER** |selection.enter()<br>Create new elements as needed.|
-    |**ENTER + UPDATE**| selection.merge(...)<br>Merge the entered elements with the update selection and      apply operations to both.|
-    |**EXIT**|selection.exit()<br>Remove old elements as needed.|
+        |Method|explanation|
+        |-|-|
+        |**DATA JOIN**|selection.data(dataset,key)<br>Join new data with old elements, if any.<br>Returns a reference to the update selection.|
+        |**UPDATE** |Update old elements as needed.|
+        |**ENTER** |selection.enter()<br>Create new elements as needed.|
+        |**ENTER + UPDATE**| selection.merge(...)<br>Merge the entered elements with the update selection and      apply operations to  both.|
+        |**EXIT**|selection.exit()<br>Remove old elements as needed.|
     
 * Updating scales and axes
     * 1. Adjust the scale properties:
