@@ -2216,7 +2216,7 @@ Affects ~9% of the population
 
 ### 12.1 Pattern recognition, memory
 
-* visual pathways (two stream hypothesis) 
+* visual pathways (two stream hypothesis) <br>
     <img src="./pic/11_1_1.png" width = "480" height = "280" alt="data_visualization" />
 
 * Pattern recognition 
@@ -2261,7 +2261,7 @@ Affects ~9% of the population
         |High bandwidth<br>Works unconsciously<br>Provides  temporal integration<br>Continuity during   saccades|Buffer that stores temporary  information<br>Constructs and manipulate visual images|    Capacity increases over childhood, declines with old age.<br>Encodes information semantically for   long term storage<br>Subject to fading, recalls help preserve it|
 
 * VISUAL BANDWIDTH
-* ATTENTIONAL BOTTLENECK ( ⇒ VSTM CAPACITY)<be>
+* ATTENTIONAL BOTTLENECK ( ⇒ VSTM CAPACITY)<br>
     <img src="./pic/11_1_7.png" width = "400" height = "350" alt="data_visualization" />
 * MILLER'S LAW [MILLER, 1956]
     * **The Magical Number Seven, Plus or MinusTwo**
