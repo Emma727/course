@@ -1340,24 +1340,24 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
 &nbsp;
 &nbsp;
 
-### 6.3 Interactive visualizations with D3
+### 7.3 Interactive visualizations with D3
 ##### 1.  Events and handling events
 * JavaScript event
-|-|-|
-|-|-|
-|Resource Events (e.g., load)|Network Events|
-|Focus Events (e.g., focus)|Websocket Events|
-|Form Events (submit)|Session History Events|
-|View Events (e.g., resize)|CSS Animation Events (animationstart)|
-|Keyboard Events (e.g., keypress)|Printing Events|
-|Mouse Events (e.g., click)|Clipboard Events|
-|Drag & Drop Events|Text Composition Events|
-|Media Events (e.g., play)|CSS events|
-|SVG events (SVGResize)|Script events|
-|Document events|Window events|
-|Popup events|DOM mutation events|
-|Touch events|...|
-(most used in visualizations)
+    |-|-|
+    |-|-|
+    |Resource Events (e.g., load)|Network Events|
+    |Focus Events (e.g., focus)|Websocket Events|
+    |Form Events (submit)|Session History Events|
+    |View Events (e.g., resize)|CSS Animation Events (animationstart)|
+    |Keyboard Events (e.g., keypress)|Printing Events|
+    |Mouse Events (e.g., click)|Clipboard Events|
+    |Drag & Drop Events|Text Composition Events|
+    |Media Events (e.g., play)|CSS events|
+    |SVG events (SVGResize)|Script events|
+    |Document events|Window events|
+    |Popup events|DOM mutation events|
+    |Touch events|...|
+    (most used in visualizations)
 
 * **Event handling**
     Once emitted, events are **propagated** in the DOM tree and processed by elements through event listeners
