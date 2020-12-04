@@ -1406,14 +1406,14 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
         * Enter:data array size>selection size
         * Update:data array size=selection size
         * Exit:data array size < selection size
-    * THE GENERAL UPDATE PATTERN
+    * THE GENERAL UPDATE PATTERN<br>
     |Method|explanation|
     |-|-|
-|**DATA JOIN**|selection.data(dataset,key)<br>Join new data with old elements, if any.<br>Returns a reference to the update selection.|
-|**UPDATE** |Update old elements as needed.|
-|**ENTER** |selection.enter()<br>Create new elements as needed.|
-|**ENTER + UPDATE**| selection.merge(...)<br>Merge the entered elements with the update selection and apply operations to both.|
-|**EXIT**|selection.exit()<br>Remove old elements as needed.|
+    |**DATA JOIN**|selection.data(dataset,key)<br>Join new data with old elements, if any.<br>Returns a        reference to the update selection.|
+    |**UPDATE** |Update old elements as needed.|
+    |**ENTER** |selection.enter()<br>Create new elements as needed.|
+    |**ENTER + UPDATE**| selection.merge(...)<br>Merge the entered elements with the update selection and      apply operations to both.|
+    |**EXIT**|selection.exit()<br>Remove old elements as needed.|
     
 * Updating scales and axes
     * 1. Adjust the scale properties:
