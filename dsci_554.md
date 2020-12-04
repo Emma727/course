@@ -1508,11 +1508,11 @@ Color is the perception of a kind of light
 * **Trichromatic vision** 三色的
     * Humans are routinely trichromatic*
     * Trichromacy through 3 color photoreceptors (cone cells)
-    * We distinguish ~10 million different colors
-    <img src="./pic/8_1_1.png" width = "200" height = "200" alt="data_visualization" />
+    * We distinguish ~10 million different colors<br>
+        <img src="./pic/8_1_1.png" width = "200" height = "200" alt="data_visualization" /><br>
     * Eye has 3 kinds of color receptors roughly corresponding to blue, green and red
-    * **Trichromatic theory problems**
-    <img src="./pic/8_1_2.png" width = "600" height = "380" alt="data_visualization" />
+    * **Trichromatic theory problems**<br>
+        <img src="./pic/8_1_2.png" width = "600" height = "380" alt="data_visualization" /><br>
 
 * **Opponent process theory**
     * The visual system responds to opponent channels
