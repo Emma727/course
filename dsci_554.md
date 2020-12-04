@@ -1956,7 +1956,7 @@ Affects ~9% of the population
     * quartiles, distribution skewness, tails, outliers, **not modes**(unimodal distribution)
     * 4等分了数据，数据主要集中再中间的部分。
     <img src="./pic/10_2_1.png" width = "280" height = "250" alt="data_visualization" /><br>
-    <img src="./pic/10_2_2.png" width = "250" height = "150" alt="data_visualization" />
+    <img src="./pic/10_2_2.png" width = "250" height = "150" alt="data_visualization" /><br>
     * violin plot: mirrored probability density
 
 * Frequency distribution table
@@ -2249,7 +2249,7 @@ Affects ~9% of the population
         * Specialized regions extract and represent generalized object structure
         * Generalized contours easily understood (sketches)
         * *V4 response to motion of a large pattern.Likely adaptation to tracking camouflaged objects.*
-    * VISUAL CORTEX & INFORMATION
+    * VISUAL CORTEX & INFORMATION<br>
         <img src="./pic/11_1_4.png" width = "400" height = "200" alt="data_visualization" />
 
 * visual memory
@@ -2261,8 +2261,8 @@ Affects ~9% of the population
         |High bandwidth<br>Works unconsciously<br>Provides  temporal integration<br>Continuity during   saccades|Buffer that stores temporary  information<br>Constructs and manipulate visual images|    Capacity increases over childhood, declines with old age.<br>Encodes information semantically for   long term storage<br>Subject to fading, recalls help preserve it|
 
 * VISUAL BANDWIDTH
-* ATTENTIONAL BOTTLENECK ( ⇒ VSTM CAPACITY)
-     <img src="./pic/11_1_7.png" width = "400" height = "350" alt="data_visualization" />
+* ATTENTIONAL BOTTLENECK ( ⇒ VSTM CAPACITY)<be>
+    <img src="./pic/11_1_7.png" width = "400" height = "350" alt="data_visualization" />
 * MILLER'S LAW [MILLER, 1956]
     * **The Magical Number Seven, Plus or MinusTwo**
     * Limits of short-term memory in a 1-Dinformation judgment task [Miller, 1956]
@@ -2272,8 +2272,8 @@ Affects ~9% of the population
      <img src="./pic/11_1_6.png" width = "400" height = "200" alt="data_visualization" />
 * Apprehendable chunk (learnable composite pattern)
     * **Apprehendable chunks**: unlearned pattern complexity that can be apprehended in one fixation
-    * Apprehendable chunks consist of **about three components**
-        <img src="./pic/11_1_8.png" width = "400" height = "200" alt="data_visualization" />
+    * Apprehendable chunks consist of **about three components**<br>
+    <img src="./pic/11_1_8.png" width = "400" height = "200" alt="data_visualization" />
 * sketches素描 (easily understood complexpatterns)
   
     * Sketches require less work to understandthan full-color, textured images.
@@ -2305,7 +2305,7 @@ Affects ~9% of the population
     * ***Multi-stability*** 同一图片有很多个解释
         * Some stimuli are perceived as changing between two or more interpretations
     * ***Invariance*** 同一物体的不同角度都能被识别
-        * Simple objects are recognized independent of pose, * deformations, lighting, and features
+        * Simple objects are recognized independent of pose, * deformations, lighting, and features<br>
     <img src="./pic/11_2_5.png" width = "300" height = "250" alt="data_visualization" />
 
 * GESTALT LAWS
@@ -2321,7 +2321,7 @@ Affects ~9% of the population
     * ***Focal points*** 焦点
         * Elements with a point of interest, emphasis or difference will capture and hold attention
     * ***Past experience*** 红绿灯
-        * Elements are perceived according to past experience
+        * Elements are perceived according to past experience<br>
     <img src="./pic/11_2_4.png" width = "500" height = "250" alt="data_visualization" />
 
 * Gestalt laws of grouping
@@ -2338,7 +2338,7 @@ Affects ~9% of the population
     * ***Connection*** 互相连接归为一类
         * Objects that are connected are perceived as a group
     * ***Common region*** 同一范围内的归为一类
-        * Objects enclosed by a boundary are perceived as a group
+        * Objects enclosed by a boundary are perceived as a group<br>
     <img src="./pic/11_2_3.png" width = "500" height = "250" alt="data_visualization" />
 
 * conclusion<br>
