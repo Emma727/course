@@ -760,9 +760,9 @@ Regardless of its cause, it is all non-data-ink or redundant data-ink, and it is
 ##### 2. Nigel Holmes' design principle
 Use humor to instill affection in readers for numbers and charts
 (用幽默向读者灌输对数字和图表的喜爱)
-* Screen Time spent looking at different chart elements
+* Screen Time spent looking at different chart elements<br>
     <img src="./pic/4_2_1.png" width = "360" height = "190" alt="data_visualization" />
-* Comprehension and Memorability
+* Comprehension and Memorability<br>
     <img src="./pic/4_2_2.png" width = "600" height = "370" alt="data_visualization" />
 
 &nbsp;
@@ -1275,7 +1275,9 @@ var svg = d3.select("body").append("svg")  //step3: set-up svg
 
 ##### 2.  Targets, distractors & visual features
 * **Feature interference** occurs when a visual feature (shape & color) that is shared between the target and distractors interferes with the preattentive process(一眼看不到target的情况)
-* **Feature hierarchy** :Some visual features interfere more than others.
+* **Feature hierarchy** :
+    * Some visual features interfere more than others.
+    * how certain preattentive features are easier to detect than others
     * e.g., 'color' is easier to detect than 'shape'
 * A **conjunction search** is a visual search involving a combination of non-unique features. In general a conjunction search cannot be done preattentively.
 <br>
