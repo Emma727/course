@@ -10,7 +10,7 @@
     * [Week9. Depth Perception and design, maps](#Week9-Depth-Perception-and-design-maps)
     * [Week10. Statistics review, statistical graphic](#Week10-Statistics-review-statistical-graphic)
     * Week11. Graphing in notebooks
-    * [Week12. Patterns, memory, visual encodings, semiology and gestalt.](#Week12-Patterns-memory-visual-encodings-semiology-and-gestalt.)
+    * [Week12. Patterns, memory, visual encodings, semiology and gestalt.](#Week12-Patterns-memory-visual-encodings-semiology-and-gestalt)
     * Week13. Writing the article for the final project. Resolving technical issues.
     * Week14. Project predsrntation
 * [quiz](#quiz)
