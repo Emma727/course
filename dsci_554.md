@@ -1400,9 +1400,9 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
       |*d3.descending*|comparator function to use with array.sort|
 * Data join selections
     * data join with enter selection (need data join on **update** and **exit** selections)
-    <img src="./pic/7_4_1.png" width = "800" height = "350" alt="data_visualization" />
+        * <img src="./pic/7_4_1.png" width = "800" height = "350" alt="data_visualization" /><br>
     * enter(), update(), exit()<br>
-            <img src="./pic/7_4_2.png" width = "400" height = "250" alt="data_visualization" /><br>
+        * <img src="./pic/7_4_2.png" width = "400" height = "250" alt="data_visualization" /><br>
         * Enter:data array size>selection size
         * Update:data array size=selection size
         * Exit:data array size < selection size
