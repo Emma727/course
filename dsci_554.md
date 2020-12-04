@@ -1915,23 +1915,23 @@ Affects ~9% of the population
         * infer (model) population data from sample data
         * Examples: hypothesis testing, regression analysis
 
-* **Nomenclature** 命名法
+* **Nomenclature** 命名法<br>
     <img src="./pic/10_1_1.png" width = "350" height = "200" alt="data_visualization" />
 
 * Measures of order
     * *Kth order statistic*: value at position k in ordered data
     * *Range*: range of values
     * *Modes/peaks*: most frequent values
-    * **Quantiles**
+    * **Quantiles**<br>
         <img src="./pic/10_1_2.png" width = "600" height = "350" alt="data_visualization" />
 
 * **Measures of central tendency**  
-    * Median, Mean, Standard deviation, Variance
+    * Median, Mean, Standard deviation, Variance<br>
         <img src="./pic/10_1_3.png" width = "800" height = "350" alt="data_visualization" />
-    * skewness 歪斜
+    * skewness 歪斜<br>
         <img src="./pic/10_1_4.png" width = "1000" height = "250" alt="data_visualization" />
 
-* **Frequency & relative frequency**
+* **Frequency & relative frequency**<br>
     <img src="./pic/10_1_5.png" width = "700" height = "250" alt="data_visualization" />
 
 * Data types<br>
@@ -1951,17 +1951,17 @@ Affects ~9% of the population
     * scatterplot matrix shows distribution for multivariate data
 * Stripchart (1d scatterplot)
     * good for comparison across categores
-        <img src="./pic/10_2_0.png" width = "200" height = "150" alt="data_visualization" />
+    <img src="./pic/10_2_0.png" width = "200" height = "150" alt="data_visualization" />
 * boxplot
     * quartiles, distribution skewness, tails, outliers, **not modes**(unimodal distribution)
     * 4等分了数据，数据主要集中再中间的部分。
-        <img src="./pic/10_2_1.png" width = "280" height = "250" alt="data_visualization" /><br>
-        <img src="./pic/10_2_2.png" width = "250" height = "150" alt="data_visualization" />
+    <img src="./pic/10_2_1.png" width = "280" height = "250" alt="data_visualization" /><br>
+    <img src="./pic/10_2_2.png" width = "250" height = "150" alt="data_visualization" />
     * violin plot: mirrored probability density
 
 * Frequency distribution table
     * often shown with ordered data, relative frequency and cumulative frequency
-        <img src="./pic/10_2_3.png" width = "250" height = "200" alt="data_visualization" />
+    <img src="./pic/10_2_3.png" width = "250" height = "200" alt="data_visualization" />
 
 * Bar charts of frequencies
     * Bars separation used to imply discontinuity
@@ -1970,7 +1970,7 @@ Affects ~9% of the population
 * stem-and-leaf plot
     * shows the data and data distribution (skewness,modes,tails,outliers)
     * steps:  
-        <img src="./pic/10_2_4.png" width = "250" height = "230" alt="data_visualization" />
+    <img src="./pic/10_2_4.png" width = "250" height = "230" alt="data_visualization" />
 
 * histogram
     * shows skewness, modes, tails, outliers
@@ -1978,11 +1978,11 @@ Affects ~9% of the population
         * Bars touch to imply continuity of bins
         * Need to experiment with the bin size
     * steps:
-        <img src="./pic/10_2_5.png" width = "350" height = "300" alt="data_visualization"/>
+    <img src="./pic/10_2_5.png" width = "350" height = "300" alt="data_visualization"/>
 
 * frequency polygon
     * shows skewness, modes, tails, outliers
-        <img src="./pic/10_2_00.png" width = "600" height = "200" alt="data_visualization"/>
+    <img src="./pic/10_2_00.png" width = "600" height = "200" alt="data_visualization"/>
 
 |plot|showing|
 |-|-|
@@ -1998,28 +1998,28 @@ Affects ~9% of the population
     * precision 预测为positive的里面有多少是真的positive 
     * recall (sensitivity) 预测对的占真实对的比例
     * specificity 预测为negative的有多少是真实也为negative的
-        <img src="./pic/10_2_6.png" width = "700" height = "400" alt="data_visualization" /><br>
-        <img src="./pic/10_2_7.png" width = "650" height = "140" alt="data_visualization" />
+    <img src="./pic/10_2_6.png" width = "700" height = "400" alt="data_visualization" /><br>
+    <img src="./pic/10_2_7.png" width = "650" height = "140" alt="data_visualization" />
 
 * confusion matrix heatmap
     * roc curve
-        <img src="./pic/10_2_8.png" width = "700" height = "450" alt="data_visualization" />
+    <img src="./pic/10_2_8.png" width = "700" height = "450" alt="data_visualization" />
 
 * Quantile-quantile plot(Q-Q PLOT)
     * compare data to a normal distribution by plotting quantiles against each other.
     * linearity suggests data is normally distributed.
-        <img src="./pic/10_2_9.png" width = "700" height = "450" alt="data_visualization" />
+    <img src="./pic/10_2_9.png" width = "700" height = "450" alt="data_visualization" />
 
 * Correlation coefficients heatmap
-    <img src="./pic/10_2_10.png" width = "700" height = "450" alt="data_visualization" />
+<img src="./pic/10_2_10.png" width = "700" height = "450" alt="data_visualization" />
 
 * Regression line and Confidence interval:
     * interval of values for which a hypothesis test to the level of 5% cannot be rejected
-        * ≡ interval has a probability of 95% to contain the true value)
+        * ≡ interval has a probability of 95% to contain the true value)<br>
     <img src="./pic/10_2_11.png" width = "700" height = "450" alt="data_visualization" />
 
 * PRINCIPAL COMPONENTS ANALYSIS PLOTS
-    <img src="./pic/10_2_12.png" width = "900" height = "450" alt="data_visualization" />
+<img src="./pic/10_2_12.png" width = "900" height = "450" alt="data_visualization" />
 
 * CLUSTERS VISUALIZATION
     * Examples: k-means, cluster dendrogram  
@@ -2039,7 +2039,7 @@ Affects ~9% of the population
     * Add jitter
     * Split the data (multi plots)
     * Summarize the data<br>
-        <img src="./pic/10_2_13.png" width = "900" height = "450" alt="data_visualization" />
+    <img src="./pic/10_2_13.png" width = "900" height = "450" alt="data_visualization" />
 
 ### 10.3 Tools
 
