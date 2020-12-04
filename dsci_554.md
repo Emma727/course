@@ -458,6 +458,7 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
 
 ### 3.3 Introduction to D3
 * D3 is
+  
     * **TL;DR.**JavaScript library to bind data to the DOM, i.e., vocabulary of graphical marks come directly from web standards: HTML, SVG, and CSS.
 * To generate the graphic in the page:
     1. Get the data
@@ -500,7 +501,7 @@ A **dashboard** is a type of graphical user interface which often provides at-a-
         obj.method1()
           .method2()
           .method3();
-          ```
+        ```
     * Is implemented using "*this*":
         ```js
         var obj = {
@@ -767,6 +768,7 @@ Use humor to instill affection in readers for numbers and charts
 &nbsp;
 &nbsp;
 ### 4.3 D3 data join basics
+##### 1. Stress test
 ```html
 d3.select(A)
   .selectAll(B)
@@ -781,18 +783,98 @@ d3.select(A)
     * 在enter()后，如果B和C不相等，则直接append，和count没有关系
 3. 每个enter()只会加入或修改和dataset数量一样的值。
 
-
-##### 1. Stress test
-
 ##### 2. Customize the selection
+* HTML ELEMENTS
+    * .attr() to set attributes, e.g., class
+    * .style() to set style parameters
+    * .text() to set inner text
+        ```js
+        var el = d3.select('body')  //select body
+        var el = d3.select('#div0')  //select div with id div0
+        var el = d3.select('#svg0')  //select svg with id svg0
+        ```
+* SVG ELEMENTS
+    * .attr() to place and size, e.g., x, width
+    * .style() to configure and update appearance
+        ```js
+        //Statically
+        <svg id='svg0' width='300' height='100'></svg>
+        //Dynamically
+        var svg = d3.select('body')
+          .append('svg')
+          .attr('width', '300')
+          .attr('height', '100');
+        ```
 
-##### 2. Multiple elements per data point
+##### 3. Multiple elements per data point
+* using to draw similar shapes or text
+    * <img src="./pic/4_3_1.png" width = "600" height = "370" alt="data_visualization" />
+    * <img src="./pic/4_3_2.png" width = "600" height = "370" alt="data_visualization" />
+    * <img src="./pic/4_3_3.png" width = "600" height = "370" alt="data_visualization" />
+
 
 &nbsp;
 &nbsp;
 ### 4.4 Loading data in D3
+* Explain
+    * Browsers cannot access or load local data (security)!
+    * Browsers can load data files by issuing an http request to a server
+    * Asynchronous process:
+        * AJAX calls
+        * d3.csv(), d3.json() (callbacks up to v3, now promises)
+    * Depending on the format Javascript dynamic typing not sufficient
 
+* ES6 PROMISES 封装异步操作
+    * A promise allows to associate handlers with asynchronous actions
+        ```js
+        let myFirstPromise = new Promise((resolve, reject) => {
+          // We call resolve(...) when what we were doing asynchronously was successful, and        reject(...) when it failed.
+          // In this example, we use setTimeout(...) to simulate async code. 
+          setTimeout( function() {
+            resolve("Success!")  // Yay! Everything went well!
+          }, 250) 
+        }) 
 
+        myFirstPromise.then((successMessage) => {
+          // successMessage is whatever we passed in the resolve(...) function above.
+          // It doesn't have to be a string, but if it is only a succeed message, it probably       will be.
+          console.log("Yay! " + successMessage) 
+        });
+        ```
+* Converting to numbers
+    * parseInt() and parseFloat()
+        ```js
+        parseInt('10');  //int 10
+        parseFloat('10.1');  //float 10.1
+        ```
+    * Coercion with unary + operator (faster)
+        ```js
+        +''  //int 0
+        +'1'  //int 1
+        +'1.1'  //float 1.1
+        ```
+* JSON FORMAT
+    * Stands for Javascript object notation
+    * Text format
+    * Data is represented as a Javascript object
+    * Keys must be quoted (strings)
+        ```json
+        [
+          {"year": 1997, "make": "Ford", "model": "E350", "length": 2.34},
+          {"year": 2000, "make": "Mercury", "model": "Cougar", "length": 2.38}
+        ]
+        ```
+* Loading csv files
+    <img src="./pic/4_4_1.png" width = "600" height = "300" alt="data_visualization" />
+* Loading json files
+    ```js
+    d3.json("cars.json").then(function (data) {
+        console.log(data);
+        //prints to the console
+        //[{year: 1997, make: "Ford", model: "E350", length: 2.34},
+        // {year: 2000, make: "Mercury", model: "Cougar", length: 2.38}]
+    });
+    ```
 
 
 &nbsp;
@@ -833,7 +915,7 @@ d3.select(A)
 5. The visual system
     * Eyes, nerves (optic nerve from eyes to brain) and visual cortex (areas V1-5)
         * 眼睛、神经(眼睛到大脑的视神经)和视觉皮层(V1-5区)
-        * blind spot 是因为有一块sptic nerve，导致那一块无法感知。
+        * blind spot 是因为有一块optic nerve，导致那一块无法感知。
     * information processing in the visual system
         <table style = 'font-size:90%'>
         <tr>
@@ -902,7 +984,7 @@ d3.select(A)
 |Continuous|Ordinal|
 |-|-|
 |Quantitative data<br>Continuous domain and range|Qualitative data<br>Discrete domain|
-|Linear<br>Time<br>Power<br>Log<br>Quantize (rounds continuous data to set of discrete values)<br>Quantile (computes quantiles from a sample population)<br>Sequential<br>Threshold (allows to specify arbitrary breaks)|Ordinal<br>Band<br>Point|
+|<u>Linear</u><br><u>Time</u><br>Power<br><u>Log</u><br>Quantize (rounds continuous data to set of discrete values)<br>Quantile (computes quantiles from a sample population)<br>Sequential<br>Threshold (allows to specify arbitrary breaks)|<u>Ordinal</u><br><u>Band</u><br><u>Point</u>|
 
 * D3.SCALELINEAR() 
     y = ax + b
@@ -1237,7 +1319,7 @@ Pre-attentive tasks applied to visual queries 前注意任务应用于视觉查�
 &nbsp;
 &nbsp;
 
-### 6.2 Continuity of visual queries
+### 7.2 Continuity of visual queries
 * Inattentional blindness (不注意的)
     * Failure to detect an unexpected stimulus that is fully visible
     * Can usually only focus on one thing at the time
@@ -1428,13 +1510,15 @@ Color is the perception of a kind of light
     <img src="./pic/8_1_1.png" width = "200" height = "200" alt="data_visualization" />
     * Eye has 3 kinds of color receptors roughly corresponding to blue, green and red
     * **Trichromatic theory problems**
-    <img src="./pic/8_1_2.png" width = "500" height = "450" alt="data_visualization" />
+    <img src="./pic/8_1_2.png" width = "600" height = "380" alt="data_visualization" />
 
 * **Opponent process theory**
     * The visual system responds to opponent channels
 Chromatic channel	red	vs.	green <br>
 Chromatic channel	blue	vs.	yellow<br>
 Achromatic channel	black	vs.	white<br>
+    <img src="./pic/8_1_3.png" width = "500" height = "450" alt="data_visualization" />
+
 
 
 #### 8.1.2 颜色错觉和原因
@@ -1452,7 +1536,7 @@ Colors of different objects affect each other
     * Double opponent cell
         * evidence that color constancy is supported by double-opponent
         * Double opponent cells have a large receptive field than single-opponent cells
-<img src="./pic/8_2_1.png" width = "500" height = "450" alt="data_visualization" />
+<img src="./pic/8_2_1.png" width = "500" height = "300" alt="data_visualization" />
 
 * **Lateral inhibition** 横向抑制
     Lateral inhibition explains *simultaneous contrast*:
@@ -1480,11 +1564,88 @@ Affects ~9% of the population
     * Opacity as value ∈ [0, 1], 0 ≡ transparent, 1 ≡ opaque
 <img src="./pic/8_2_3.png" width = "500" height = "450" alt="data_visualization" />
 
+* Primary, secondary and complementary colors
+    <img src="./pic/8_2_4.png" width = "700" height = "450" alt="data_visualization" />
+* additive color model techniques
+    * |Addition of illumination|Projected colors overlap, e.g., stage projectors|
+      |-|-|
+      |Partitive mixing|Closely spaced colored dots, colors are next to each other, e.g., LCD screens|
+      |Time mixing|OLED micro displays, rotating color wheels, sequential illumination|
+      |Binocular mixing|Different colors on each eye, mixed by the brain|
+* RGB and HSV
+    <img src="./pic/8_2_5.png" width = "700" height = "400" alt="data_visualization" />
+* Color space
+    * A tool used to define the gamut (subset of colors) accurately represented by a device or digital file
+    * Color as:
+        * chromaticity: (hue, saturation)
+        * luminance (1d)
+* Srgb color space (hp, microsoft 1996)
+    * Default in browsers (typical office or home viewing equipment)
+        <img src="./pic/8_2_6.png" width = "300" height = "400" alt="data_visualization" />
+* Color matching experiment (helmholtz & maxwell 1850)
+    * Subjects adjust wavelengths of primaries to match a sample
+    * Most people will match, same light, same primary colors with the same weights
+        <img src="./pic/8_2_7.png" width = "400" height = "300" alt="data_visualization" />
 ### 8.3 Color design
+* Uses of colors (Tufte)
+    1. Label: Identify, Highlight Or Group
+        * identify, hightlight, group
+    2. Measure, Represent Or Imitate Reality
+        * False-color (discrete range)
+            * False colors techniques: choropleth map; density slicing
+        * Pseudocolor (continuous range)
+            * Colored thermographic image of a ringtailed lemur.
+    3. Enliven or Decorate
+* Vision deficiencies 色觉缺陷
+    1. Color blindness
+    2. Blurred vision
+* Color Contrast (results from simultaneous contrast)
+* Sharpening
+    * We are more sensitive to dark than light differences
+        <img src="./pic/8_3_1.png" width = "600" height = "300" alt="data_visualization" />
+* Color sequences (aka schemes)
+    * explain:
+        * Use established color sequences, e.g., ColorBrewer
+        * Use appropriate color sequence type
+        * Use colorblind safe colors (test with Color Oracle or Dev Tools)
+        * With discrete scales, limit colors used as keys to 5-7
+    * types
+        |Scheme|Characteristics|Example|
+        |-|-|-|
+        |Sequential|Ordered data, light colors for lower values to dark colors for higher values|白色渐变某一种颜色|
+        |Diverging|Critical class or break in the middle, sequential sequences of contrasting hues on both ends.|两种颜色渐变|
+        |Qualitative|For nominal or categorical data.|随机颜色|
+* General Recommendations
+    * Respect well-established color sequences	
+    * Shape from shading is recognized from the luminance channel, color interferes	
+    * Observe cultural conventions
+* Color Composition Recommendations
+    * Use color palettes for more attractive, less confusing displays
+    * Use consistent aesthetics across multiple graphics
+    * Most important visual queries should have most weight
+    * Use lighter colors for background
+    * Do not overuse accent colors
+    * Use accessibility standards, e.g., AA (minimum) contrast ratio of 4.5:1 for all text.
 
 ### 8.4 Colors in D3
-
+* D3 COLOR SCALES
+    * D3-SCALE + COLORS SCHEMES
+    * Input domain data --> output range colors
+        |-|Continuous|Discrete|
+        |-|-|-|
+        |**Continuous**|Linear, Sequential, Diverging|Quantize, Quantile|
+        |**Discrete**|-|Ordinal, Threshold|
 ### 8.5 Complex D3 graphs
+* D3 libraries for complex graphs
+    |Library|type|description|visualization|
+    |-|-|-|-|
+    |D3-shape|generator|graphical primitives for visualization, such as lines and areas|Line, area, pie charts, symbols...|
+    |D3-chord|layout|relationships or network flow in circular layout.|Chord diagram|
+    |D3-force|layout|force-directed graph layout using velocity verlet integration.|Physical simulations in networks and hierarchies, bubbles charts...|
+    |D3-hierarchy|layout|2d layout algorithms for visualizing hierarchical data.|Treemaps, dendrograms, circle-packing...|
+    |D3-sankey|layout|directed flow between nodes in an acyclic network.|Sankey diagrams|
+    |D3-hexbin|generator|group two-dimensional points into hexagonal bins.|Hexbins plots|
+    |D3.Histogram|generator|computes the histogram for the given array.|Histograms|
 
 &nbsp;
 &nbsp;
@@ -1498,7 +1659,10 @@ Affects ~9% of the population
 &nbsp;
 
 ### 9.1 Depth perception and design considerations
-
+* Perceptual Egocentric Space
+    * Decreased depth information in towards-away because of object occlusions
+    * up, towards, sideways
+        <img src="./pic/9_1_2.png" width = "300" height = "200" alt="data_visualization" />
 * **Depth information and depth cues**
     <img src="./pic/9_1_1.png" width = "700" height = "250" alt="data_visualization" />
     * Oculomotor 动态的
@@ -1508,18 +1672,28 @@ Affects ~9% of the population
     * visual 
         * monocular 单眼的
             * static (classic pictorial cues)
-                * Occlusions 遮蔽现象 An object blocks another
+                * Occlusions 遮蔽现象 
+                    * An object blocks another
                 * Linear perspective convergence 透视线
                 * Relative size, Familiar size 大小来确认远近
+                    1. Object size: the retinal projection is proportional to object size and inversely proportional to the object distance
+                    2. Relative height: object closer to the horizon are farther – up
                 * Texture Gradient 纹理坡度 
+                    * density, perspective (foreshortening) and distortion of texture elements between closer and farther away objects
                 * Shadows
-                * Shading 阴影 DEPICTING DEPTH IN 3D MODELS OR ILLUSTRATIONS BY VARYING LEVELS OF DARKNESS
+                    * dark area where light from a light source is blocked by an opaque object
+                * Shading 阴影 
+                    * depicting depth in 3d models or illustrations by varying levels of darkness
                 * Defocus blur 散焦模糊
+                    * aberration in which an image is out of focus
                 * Atmospheric perspective 雾化效果
+                    * farther objects less distinct, colors less saturated, mountains in the back appear more blue
             * motion-based 会有视差 
                 * Motion parallax (近处的物体移动的更快)
+                    * closer objects move faster than farther away objects
                 * Occlusion in motion (using deletion & accretion)
                 * Structure (产生深度)
+                    * depth cues from different points of view or moving object
         * binocular 
             * Stereopsis 立体视差
 
@@ -1584,15 +1758,19 @@ Affects ~9% of the population
         * **common projection**
             * Lambert azimuthal equal-area <br>
                 azimuthal projection, equal area, choropleth maps<br>
+                    <img src="./pic/9_2_3.png" width = "500" height = "250" alt="data_visualization" />
             * Albers conic<br>
                 conic projection, equal area, choropleth maps<br>
+                    <img src="./pic/9_2_4.png" width = "500" height = "350" alt="data_visualization" />
             * Lambert conformal conic (LCC) <br>
                 conic projection, conformal, aeronautical charts<br>
+                    <img src="./pic/9_2_5.png" width = "500" height = "250" alt="data_visualization" />
             * Mercator projection <br>
-                cylindrical projection, conformal, web mapping applications.<br>
+                cylindrical projection, conformal, **web mapping applications**.<br>
+                    <img src="./pic/9_2_6.png" width = "500" height = "250" alt="data_visualization" />
             * Universal transverse Mercator (UTM)<br>
-                secant cylindrical transverse Mercator, conformal, using cartesian coordinates (Easting and Northing).
-
+                secant cylindrical transverse Mercator over 61*6 zones, conformal, using cartesian coordinates (Easting and Northing)(48 N 377299m 1483035m).
+                    <img src="./pic/9_2_7.png" width = "500" height = "250" alt="data_visualization" />
 ### 9.3 Working with maps
 * map formats
     * raster (img)
@@ -1603,6 +1781,8 @@ Affects ~9% of the population
     * Interactive raster or vector tiles (slippy maps) with maps apps, e.g., leaflet, mapbox.
     * JSON (GeoJSON, TopoJSON), with d3 and maps apps, e.g., leaflet, mapbox.
     * Shapefiles (ESRI proprietary format), with some maps apps and specialized GIS software.
+* Tile map service (TMS)
+    <img src="./pic/9_3_1.png" width = "500" height = "250" alt="data_visualization" />
 
 * **GEOJSON**
     * **Geometry**: Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, GeometryCollection
@@ -1638,13 +1818,79 @@ Affects ~9% of the population
         geojson 'Geometry' indexed with 'arcs' <br>
 
 * geojson and topojson files
-    * Geometry in geographical or projected coordinates
+    * Geometry in <u>geographical</u> or <u>projected</u> coordinates
     * Arbitrary extensions, e.g., .json, .geojson, .topojson
     * Can be used while loading data separately as CSV, json:
         * Nest d3.json and d3.csv
         * Use *d3-queue*, e.g., *block 1696080*
         * Use ES6 *Promise.all()*
     * Can embed the data as properties
+* Maps with D3
+    * D3/D3-GEO
+        ```js
+        d3.json() //load GeoJSON or TopoJSON
+        d3.[geoAlbersUsa(), geoAzimuthalEquidistant()...]  //project (lat, lon) to (x, y)
+        d3.geoPath() //Feature → path
+
+        <svg width="960" height="600"></svg>
+
+        <script>
+        var svg = d3.select("svg"),
+          width = +svg.attr("width"),
+          height = +svg.attr("height");
+
+        d3.json("us.json").then(json => {  //load GeoJSON or TopoJSON
+
+        var projection = d3.geoAlbersUsa()  //project (lat, lon) to (x, y)
+          .fitSize([width, height], json);
+
+        var path = d3.geoPath()  //Feature → path
+          .projection(projection);
+
+        svg.selectAll("path")
+          .data(json.features)  //data join with features
+          .enter()
+          .append("path")
+          .attr("fill", "white")
+          .attr("stroke", "black")
+          .attr("d", path);  //generate geographic path
+        });
+        </script>
+        ```
+    * D3 with tepojson
+        ```js
+        d3.json()  //load TopoJSON
+        d3.[geoAlbersUsa(), geoAzimuthalEquidistant()...]  //project (lat, lon) to (x, y)
+        d3.geoPath() //Feature → path
+        topojson.feature() //TopoJSON → GeoJSON (d3 only knows how to render GeoJSON)
+        topojson.mesh() //generates GeoJSON MultiLineString geometry for interior boundaries
+
+        <svg width="960" height="600"></svg>
+
+        <script>
+          d3.json("us-10m.v1.json").then(function (us) {  //us-10m.v1.json contains projected       TopoJSON
+
+            //no projection needed as TopoJSON is already projected
+
+            var path = d3.geoPath();  //Feature → path
+
+        	var svg = d3.select("svg");
+            svg.append("g")
+              .attr("class", "states")
+              .selectAll("path")
+              //convert TopoJSON → GeoJSON features (state polygons) and perform data join with         those features
+              .data(topojson.feature(us, us.objects.states).features)  
+              .enter()
+              .append("path")
+              .attr("d", path);
+
+            svg.append("path")
+              .attr("class", "state-borders")
+              //generate path for GeoJSON features of interior boundaries
+              .attr("d", path(topojson.mesh(us, us.objects.states, function (a, b) { return a       !== b; })));  
+          });
+        </script>
+        ```
 
 
 
@@ -1661,6 +1907,7 @@ Affects ~9% of the population
 ### 10.1 Basics of statistics and modeling
 
 * **Statistics**
+    <img src="./pic/10_1_0.png" width = "500" height = "200" alt="data_visualization" /><br>
     * Descriptive statistics 描述统计
         * summarize (i.e. one number stands for a group of numbers) the data
         * Examples: mean, median, SD
@@ -1669,7 +1916,7 @@ Affects ~9% of the population
         * Examples: hypothesis testing, regression analysis
 
 * **Nomenclature** 命名法
-    <img src="./pic/10_1_1.png" width = "300" height = "170" alt="data_visualization" />
+    <img src="./pic/10_1_1.png" width = "350" height = "200" alt="data_visualization" />
 
 * Measures of order
     * *Kth order statistic*: value at position k in ordered data
@@ -1706,9 +1953,9 @@ Affects ~9% of the population
     * good for comparison across categores
         <img src="./pic/10_2_0.png" width = "200" height = "150" alt="data_visualization" />
 * boxplot
-    * quartiles, distribution skewness, tails, outliers, **not moodes**(unimodal distribution)
+    * quartiles, distribution skewness, tails, outliers, **not modes**(unimodal distribution)
     * 4等分了数据，数据主要集中再中间的部分。
-        <img src="./pic/10_2_1.png" width = "250" height = "200" alt="data_visualization" /><br>
+        <img src="./pic/10_2_1.png" width = "280" height = "250" alt="data_visualization" /><br>
         <img src="./pic/10_2_2.png" width = "250" height = "150" alt="data_visualization" />
     * violin plot: mirrored probability density
 
@@ -1772,7 +2019,7 @@ Affects ~9% of the population
     <img src="./pic/10_2_11.png" width = "700" height = "450" alt="data_visualization" />
 
 * PRINCIPAL COMPONENTS ANALYSIS PLOTS
-    <img src="./pic/10_2_12.png" width = "700" height = "450" alt="data_visualization" />
+    <img src="./pic/10_2_12.png" width = "900" height = "450" alt="data_visualization" />
 
 * CLUSTERS VISUALIZATION
     * Examples: k-means, cluster dendrogram  
@@ -1791,11 +2038,12 @@ Affects ~9% of the population
     * Add information
     * Add jitter
     * Split the data (multi plots)
-    * Summarize the data
+    * Summarize the data<br>
+        <img src="./pic/10_2_13.png" width = "900" height = "450" alt="data_visualization" />
 
 ### 10.3 Tools
 
-* dataframe 
+* dataframe (横着看是一条完整数据)
     * Table with same length columns    
     * Columns are variables 变量
     * Rows are observations 种类
@@ -1805,25 +2053,29 @@ Affects ~9% of the population
     * http://matplotlib.org and gallery
     * Chart typology
     * Originally emulating the MATLAB® graphics commands
-    * Imperative (functional) programming
+    * Imperative (functional) programming<br>
+        <img src="./pic/10_3_2.png" width = "700" height = "300" alt="data_visualization" />
 
 * SEABORN
     * https://seaborn.pydata.org and gallery
     * Chart typology
     * High-level interface for statistical graphics based   * on Matplotlib
     * Imperative (functional) programming
-    * Support for Pandas dataframes
+    * Support for Pandas dataframes<br>
+        <img src="./pic/10_3_3.png" width = "800" height = "450" alt="data_visualization" />
 
 * GGPLOT2
     * ggplot2 R package and ggg gallery
     * Visual Analysis Grammar
-    * Support for R dataframes
+    * Support for R dataframes<br>
+        <img src="./pic/10_3_4.png" width = "900" height = "450" alt="data_visualization" />
 
 * PLOTNINE
     * Plotnine website and gallery
     * Visual Analysis Grammar
     * Based on ggplot2 for Python
-    * Support for Pandas dataframes
+    * Support for Pandas dataframes<br>
+        <img src="./pic/10_3_5.png" width = "900" height = "450" alt="data_visualization" />
 
 * ALTAIR
     * Altair website and gallery
@@ -1831,7 +2083,8 @@ Affects ~9% of the population
     * Declarative synthax
     * Statistical visualization library
     * Based on Vega and Vega-Lite
-    * Support for Pandas dataframes
+    * Support for Pandas dataframes<br>
+        <img src="./pic/10_3_6.png" width = "800" height = "400" alt="data_visualization" />
 
 * COMPONENTS OF THE GRAMMAR OF GRAPHICS [WILKINSON 1999]
     * **Core idea**: define a graphic using a *grammar* of *components*
@@ -1841,9 +2094,115 @@ Affects ~9% of the population
         4. COORD: a coordinate system, e.g., polar,
         5. ELEMENT: graphs, e.g., points, and their aesthetic      2. attributes, e.g., color,
         6. GUIDE: one or more guides, e,g., axes, legends.
-        <img src="./pic/10_3_1.png" width = "800" height = "200" alt="data_visualization" />
+        <img src="./pic/10_3_1.png" width = "900" height = "250" alt="data_visualization" />
 
+* Layered grammar of graphics -- ggplot2 [wickham 2010]
+    * Defaults
+        * A default dataset and set of mappings from variables to aesthetics
+        * Data, Mapping
+    * Layer
+        * One or more layers, each composed of a geometric object, a statistical transformation, a position adjustment, and optionally, a dataset and aesthetic mappings
+        * Data, Mapping, Geom, Stat, Position
+    * Coord
+        * A coordinate system
+    * Facet
+        * The facetting specification
+    * *A theme controls the finer points of display, like the font size and background color*
 
+* Minimal ggplot2 plot
+    * 3 components required in every ggplot2 plot: **data, aesthetic mapping, geom**
+        ```r
+        ggplot(data=mpg, aes(x=hwy, y=cty)) + geom_point() #Defaults
+        ggplot(mpg, aes(hwy, cty)) + geom_point() #positional args
+        ggplot(mpg) + geom_point(aes(hwy, cty))  #Mapping in layer
+
+        # Same using a variable
+        p <- ggplot(mpg, aes(hwy, cty))  #set Defaults
+        p + geom_point()  #add Layer with Geom
+        ```
+        <br><img src="./pic/10_3_7.png" width = "500" height = "300" alt="data_visualization" />
+    * aes()
+        *  used to reference variables in the data (dataframe)
+            ```r
+            # mtcars dataset:
+                                mpg  cyl  disp  hp drat    wt  qsec vs am gear carb
+            Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+            Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+            Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+
+            aes(x = mpg, y = wt)
+            #> Aesthetic mapping: 
+            #> * `x` -> `mpg`
+            #> * `y` -> `wt`
+
+            # You can also map aesthetics to functions of variables
+            aes(x = mpg ^ 2, y = wt / cyl)
+            #> Aesthetic mapping: 
+            #> * `x` -> `mpg^2`
+            #> * `y` -> `wt/cyl`
+
+            # Or to constants
+            aes(x = 1, colour = "smooth")
+            #> Aesthetic mapping: 
+            #> * `x`      -> 1
+            #> * `colour` -> "smooth"
+            ```
+    * mappings aesthetics
+        ```r
+        ggplot(mpg, aes(hwy, cty, color=manufacturer, size=displ)) + geom_point()
+        ggplot(mpg, aes(hwy, cty, col=manufacturer, size=displ)) + geom_point()
+        ggplot(mpg, aes(hwy, cty, colour=manufacturer, size=displ)) + geom_point()
+        ggplot(mpg, aes(hwy, cty)) + geom_point(aes(color=manufacturer, size=displ))
+        ggplot(mpg, aes(hwy, cty), color=manufacturer, size=displ) + geom_point()  #bad
+        ggplot(mpg, aes(hwy, cty)) + geom_point(color=manufacturer, size=displ)  #equally bad!
+        ```
+        <br><img src="./pic/10_3_8.png" width = "500" height = "300" alt="data_visualization" />
+    * adding layers
+        ```r
+        > ggplot(mpg, aes(hwy, cty)) +  #Defaults
+        geom_point() +  #add Geom point Layer
+        geom_smooth()  #add Geom smooth Layer (regression)
+        ```
+        <br><img src="./pic/10_3_9.png" width = "400" height = "300" alt="data_visualization" />
+    * basic named plots
+        * All understand x, y, color and size aesthetics.
+        * Filled geoms also understand fill.
+            |plot|name|
+            |-|-|
+            |Scatterplot|geom_point()|
+            |Text|geom_text()|
+            |Bar chart|geom_bar()|
+            |Line chart|geom_line()|
+            |Area chart|geom_area()|
+            |Dot plot|geom_dotplot()|
+            |Histogram|geom_histogram()|
+            |Frequency polygon|geom_freqpoly()|
+            |Box plot|geom_boxplot()|
+            |Violin plot|geom_violin()|
+    * faceting 小平面
+        `t <- ggplot(mpg, aes(cty, hwy)) + geom_point()`
+        <br><img src="./pic/10_3_10.png" width = "700" height = "300" alt="data_visualization" />
+    * Default themes and extra themes
+        ```r
+        p <- ggplot(mpg, aes(displ, hwy, color=class)) + geom_point()
+        p + theme_bw() + ggtitle("theme_bw")
+        p + theme_minimal() + ggtitle("theme_minimal")
+
+        library(ggthemes)  #extra themes
+        p + theme_tufte() + ggtitle("theme_tufte")
+
+        theme_set(theme_bw())  #sets the theme for all subsequent ggplot plots
+        ```
+        <br><img src="./pic/10_3_11.png" width = "1000" height = "300" alt="data_visualization" />
+    * ```r
+      ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species, size=Petal.Length)) + geom_point()
+      ```
+    <br><img src="./pic/10_3_12.png" width = "600" height = "300" alt="data_visualization" />
+
+* Tableau
+    * With data read from CSV:
+        1. Dimensions ↔ categorical visual variables
+        2. Measures ↔ numerical visual variables
 
 &nbsp;
 &nbsp;
